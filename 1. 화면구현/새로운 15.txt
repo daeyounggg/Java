@@ -1,0 +1,61 @@
+조인 // 시험
+- 여러 테이블을 하나의 테이블처럼 사용(같은 공통 값)
+SELECT ... FROM 테이블명, 테이블명 .... 
+
+테이블명.컬럼명 
+
+별칭 
+[AS]  - 컬럼, 테이블(오라클 X)
+
+조인 종류
+1. 등가 조인
+	- 특정 컬럼의 값의 동일 여부 
+	- INNER JOIN 
+	
+2. 비등가 조인
+	- 암묵적인 조인 
+	- 값의 범위 
+		(EMP,SALGRADE)
+		
+3. 자체 조인
+	- 같은 테이블내에서 조인 
+	EMP.MGR : 관리자 번호 - 직원번호(EMP.EMPTNO)
+	
+4. 외부 조인
+	기준 테이블의 레코드는 다 나오고, 조인 하는 다른 테이블은 공통 값이 있으면 함께 추가로 나온다.
+	
+	왼쪽 외부 조인(Left Outer Join) : WHERE 테이블1.컬럼명 = 테이블2.컬럼명(+)
+	오른쪽 외부 조인(Right Outer Join) : WHERE 테이블1.컬럼명(+) = 테이블2.컬럼명
+		
+	양쪽 외부 조인(Full Outer Join) : 양쪽 테이블 데이터가 다 나오나, 추가 정보가 있으면 함께 나온다.	
+											 - (+) 는 정의 불가, SQL 표준 문법 
+											 - Oracle, MSSQL 가능 
+											 - Mysql 지원 X
+
+SQL-99 표준 문법
+1. NATUAL JOIN
+	- 두 테이블에서 컬럼명, 자료형이 같으면 알아서 조인 
+	- 등가조인 
+	
+2. JOIN ~ USING
+	- 등가조인(INNER JOIN, JOIN), 외부 조인(LEFT [OUTER] JOIN, RIGHT [OUTER] JOIN)
+	- FROM 테이블1 [INNER|LEFT [OUTER]|RIGHT [OUTER]] JOIN 테이블2  USING(공통 컬럼명)
+	
+3. JOIN ~ ON
+	FROM 테이블1   [INNER|LEFT [OUTER]|RIGHT [OUTER]]  JOIN 테이블2  ON 테이블1.컬럼명 = 테이블2.컬럼명;
+	
+	
+	참고)
+		boardDatas - idBoard : 외래키 
+		boards - id : 기본키
+		
+		기본키 주로 많이 사용되는 항목 : 대리키 (id, seq, idx ....)
+			- 외래키 명  테이블명_기본키, 기본키_테이블명
+		
+4. OUTER JOIN
+	LEFT [OUTER] JOIN  : 왼쪽 테이블이 전체, 오른쪽이 추가 정보 
+	RIGHT [OUTER] JOIN : 오른쪽 테이블 전체, 왼쪽이 추가 정보
+	
+	FULL OUTER JOIN : 양쪽 외부 조인, 양쪽 모두에서 추가 정보가 있으면 표기, 없으면 NULL
+	
+5. 세 개 이상의 테이블을 조인 

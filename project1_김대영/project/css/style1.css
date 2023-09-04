@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+* { box-sizing: border-box; font-family: 'Nanum Gothic', sans-serif; color: #000; outline: none; }
+html { font-size: 13px; /* 1rem - 13px */}
+
+/* 공통 초기화 */
+body { margin: 0 auto; max-width: 1200px; background: #ccc; }
+a { text-decoration: none;}
+header, nav, main, footer { background: #fff; }
+div { margin: 0; padding: 0;}
+footer ul {display: flex; justify-content: space-evenly; margin: 5px; list-style: none; }
+
+/* 공통 스타일 */
+.hind { font-family: 'Hind', sans-serif; }
+.dn { display: none !important; }
+
+/* 헤더 영역 S */
+header { display:flex; align-items: center; height: 64px; justify-content: space-between; min-width: 320px; padding: 20px 40px; border-bottom: 1px solid #e6e6e6; }
+header .logo img { display: flex; width: 120px; height: 80px; }
+header i { font-size: 1.0rem; }
+header .div .rightLink { height: 22px; padding: 8px 40px 0; }
+header .centerLink a { margin-left: 10px; }
+/* 헤더 영역 E */
+
+/* 메뉴 영역 S */
+nav { display: flex; padding-left: 40px; padding-right: 40px;  }
+nav a { display: inline-flex; height: 100%; padding-bottom: 6px; padding-top: 15px; }
+nav a li { margin-left: 27px; list-style: none; }
+/* 메뉴 영역 E */
+
+/* 메인 배너 영역 S */
+.swiper-pagination { bottom: 15px !important; }
+.swiper-pagination-bullet { width: 12px; height: 12px; background: #fff; opacity: 0.5; }
+.swiper-pagination-bullet-active { opacity: 1; }
+.mySwiper .next, .mySwiper .prev { top:calc(50% - 1.19rem); font-size: 3.38rem; color: #fff; position: absolute; z-index: 10; cursor: pointer; }
+.mySwiper .next { right: 10px; }
+.mySwiper .prev { left: 10px; }
+.mySwiper .swiper-slide img { width: 100%; display: block; cursor: pointer; }
+/* 메인 배너 영역 E */
+
+/* 서브 메뉴 영역 S */
+.items { display: flex; flex-wrap: wrap; margin-left: 50px; cursor: pointer; list-style: none; margin-bottom: 56px; margin-top:40px; }
+.items img { display: flex; height: 100px; width: calc(100% / 2); margin-bottom: 20px; border-radius: 10px; }
+.items a:nth-of-type(3n+1) { border-left: 0; }
+.items a:nth-of-type(1),
+.items a:nth-of-type(2),
+.items a:nth-of-type(3) { border-top: 0; }
+
+.more_btn { display: block;  width: 20%; background: #fff; border: 1px solid #b1b1b1; border-radius: 5px; margin-left: 40%; color: #212121; border-left: 50%; border-right: 50%; font-weight: bold; font-size: 1.154rem; cursor: pointer; height: 20px; margin-bottom: 30px; }
+/* 서브 메뉴 영역 E */
+
+/*푸터 공용*/
+footer {width: 1000px; margin: 50px; position: relative; border-top: 2px solid #000;}
+
+/*푸터 메뉴*/
+.company_info {font-size: 5px; text-align: center; margin: 30px; margin-left: 100px;  }

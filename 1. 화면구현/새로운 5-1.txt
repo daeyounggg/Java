@@ -1,0 +1,31 @@
+global EC(Execution Context) 객체 {
+	변수 레코드 : {
+		window
+			.num() : 5
+	}
+	this 바인딩 : window 주소값 
+}
+
+outer EC(Execution Context) 객체 {
+	변수 레코드 {
+		num1 : 10,
+		inner : ...
+		result : ...
+	}
+	
+	외부 변수 레코드 참조 : global EC 변수 레코드 주소 
+	
+	this 바인딩 : 호출한 객체의 주소값 
+}
+
+inner EC(Execution Context) 객체 {
+	변수 레코드 : {
+		num2 : 20,
+		num3 : 30
+	}
+	
+	외부 변수 레코드 참조 : outer EC 변수 레코드 주소 
+	(유효범위 체인)
+	
+	this 바인딩 : 호출한 객체의 주소값 
+}
