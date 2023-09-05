@@ -59,10 +59,9 @@ SQL문 속 또 다른 SQL문, 서브 쿼리
 		-> 부서번호, 최대 급여
 	
 5. FROM절에 사용하는 서브쿼리와 WITH절
-1) WITH 절
-2) 상호 연관 서브쿼리
-	
-	
-6. SELECT 절에 사용하는 서브쿼리
+1) WITH 절 - 오라클에서만 가능
 
-SELECT * FROM boardDatas b WHERE b.totalComments <> (SELECT COUNT(*) FROM boardComments c WHERE b.id = c.idBoardData)
+2) 상호 연관 서브쿼리 (상관 부속질의)
+	SELECT * FROM boardDatas b WHERE b.totalComments <> (SELECT COUNT(*) FROM boardComments c WHERE b.id = c.idBoardData)
+	
+6. SELECT 절에 사용하는 서브쿼리 : 스칼라 부속질의(단일값), JOIN이 더 효율
