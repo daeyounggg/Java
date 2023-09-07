@@ -2,6 +2,8 @@
 1. 배열이란?
 - 같은 자료형(공간의 크기가 동일)
 - 물리적인 나열 구조(순차 자료 구조)
+- 순서 쉽게 계산 -> [] 인덱스 연산자
+- 자바스크립트의 배열과 다름 
 
 2.  배열 선언과 초기화
 	자료형[] 배열명 = new 자료형[공간의 갯수];
@@ -28,6 +30,17 @@
 	참조 자료형 
 		예) String - 초기값 null 
 
+	
+	참고)
+		JDK(Java Development Kit)
+			java.util 패키지 
+				Arrays : 배열의 편의 기능
+				Collections : 컬렉션의 편의 기능 
+				
+			java.util.stream
+					Collectors
+			
+	import java.util.Arrays
 	
 4. 전체 배열 길이와 유효한 값
 	모든 배열 
