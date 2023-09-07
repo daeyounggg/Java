@@ -168,5 +168,12 @@ for(초기화식; 조건식; 증감식) {
 
 for -> 구구단;
 
-System.out.println(값);
-	+ \n
+System.out.println(값); : 출력 + 줄개행(\n) 
+				print(값) : 출력 (줄개행 X)
+				println() : 줄개행(\n)
+				printf(형식화)
+				
+				%s -> 문자열 대체
+				%d -> 정수 대체
+				%f -> 실수 대체
+				%n -> 줄개행 
