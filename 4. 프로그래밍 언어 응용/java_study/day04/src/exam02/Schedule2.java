@@ -37,7 +37,9 @@ public class Schedule2 {
                 ", day=" + day +
                 '}';
     }
+
     public void printThis(){
-        System.out.println(this);
+        System.out.println(this); // this.toString()
+        System.out.println(System.identityHashCode(this));
     }
 }
