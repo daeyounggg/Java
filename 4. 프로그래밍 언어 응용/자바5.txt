@@ -39,9 +39,14 @@
 		다른 패키지에 있는 클래스를 사용하려면 import
 		import 패키지명.클래스명;
 		
-2. get(), set() 메서드
+2. get(), set() 메서드 - 캡슐화
+- getter() : 값 조회
+- setter() : 값 지정
 
 this 예약어		 
+
+- 객체 참조 변수 = this
+
 static 변수
 
 변수의 유효범위

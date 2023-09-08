@@ -5,6 +5,16 @@ public class Schedule2 {
     private int month;
     private int day;
 
+    public Schedule2(){
+        this(2023,9,8);
+    }
+
+    public Schedule2(int year, int month, int day){
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+
     public int getYear() {
         return year;
     }
@@ -31,6 +41,7 @@ public class Schedule2 {
 
     @Override
     public String toString() {
+
         return "Schedule2{" +
                 "year=" + year +
                 ", month=" + month +
