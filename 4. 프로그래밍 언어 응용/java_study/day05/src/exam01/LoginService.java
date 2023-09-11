@@ -10,6 +10,7 @@ public class LoginService {
         if(instance == null){
             instance = new LoginService();
         }
+
         return instance;
     }
 }
