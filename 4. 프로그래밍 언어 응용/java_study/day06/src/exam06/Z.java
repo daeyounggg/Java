@@ -1,4 +1,4 @@
 package exam06;
 
-public class Z {
+public interface Z {
 }
