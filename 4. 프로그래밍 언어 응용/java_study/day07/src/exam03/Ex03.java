@@ -10,9 +10,7 @@ public class Ex03 {
 
             String str = null;
             System.out.println(str.toUpperCase()); // NullPointerException
-        }catch (ArithmeticException e){
-            System.out.println(e.getMessage());
-        } catch (NullPointerException e){
+        }catch (ArithmeticException | NullPointerException e){
             System.out.println(e.getMessage());
         }
         System.out.println("중요한 코드");
