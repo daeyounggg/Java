@@ -79,6 +79,9 @@ Exception
 		// return 하더라도 코드가 실행 
 	}
 	
+	참고)
+		SQLException 
+		
 3. try-with-resources문
 	- JDK7에서 추가
 	- 자원 해제를 자동 

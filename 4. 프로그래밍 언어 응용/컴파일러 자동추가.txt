@@ -4,3 +4,6 @@
 3. 인터페이스의 메서드 -> public abstract
 4. 인터페이스에 정의된 변수 -> public static final 
 5. 참조 변수를 출력 -> 참조변수.toString()
+6. import java.lang.*;
+7. extends java.lang.Object
+8. 지역 내부 클래스 : 지역변수의 상수화
