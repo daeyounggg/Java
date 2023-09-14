@@ -3,10 +3,10 @@ package exam01;
 public class Ex04 {
     public static void main(String[] args) {
         LoginService service = new LoginService();
-       try {
+     try {
            service.login("user01", "1234");
        } catch (UserIdException | UserPwException e) {
-           System.out.println(e.getMessage());
-       }
+         System.out.println(e.getMessage());
+     }
     }
 }
