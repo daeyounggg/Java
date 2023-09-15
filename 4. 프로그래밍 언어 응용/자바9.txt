@@ -51,9 +51,20 @@ Set - HashSet
 - 객체를 찾기 위한 용도
 - 동등성 비교 기준
 
+
+참고)
+java.util.
+		Objects
+		Arrays
+		Collections
+		stream.Collectors
+
 String 클래스
 
 1. String을 선언하는 두 가지 방법
+String str = "가나다";
+String str2 = new String("가나다");
+
 2. String 클래스의 final char[] 변수
 3. StringBuffer와 StringBuilder 클래스 활용하기
 
