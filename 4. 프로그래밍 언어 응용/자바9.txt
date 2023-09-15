@@ -1,0 +1,76 @@
+사용 중인 계정에서는 Google Drive 내에서 새 파일을 만들 수 없습니다. 기존 파일을 보고 수정할 수는 있습니다.자세히 알아보기
+java.lang 패키지
+- 기본적으로 많이 사용하는 클래스들이 포함
+
+예) String 
+	java.lang.String 
+
+컴파일러가 패키지명 바로 아래쪽 import java.lang.*;가 추가 
+- lang 패키지의 모든 클래스는 그냥 사용 가능 
+
+Object 클래스
+	- 모든 클래스의 상위 클래스 
+	- 상속이 명시 X -> extends java.lang.Object 가 추가(컴파일러)
+
+- Object 클래스에 정의된 메서드
+1. toString() 메서드
+
+public String toString()	{
+	return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+
+참고) 
+Class getClass()
+
+Class 클래스 객체 : 클래스의 정보가 담겨있는 객체
+- 클래스 파일이 로드될때 자동 생성되는 객체
+1) 모든 클래스의 정적 변수 class
+2) Object
+		Class getClass() : 클래스 내부에서 사용하는 경우
+
+3) Class Class.forName("패키지명을 포함한 클래스명") : 클래스의 동적 로딩, 반환값이 Class 
+
+2.  equals() 메서드
+public boolean equals(Object obj){
+	return (this == obj);
+}
+
+1) 동일성
+	- 같은 주소 비교
+	- ==
+	
+2) 동등성
+	- 동일 가치 비교
+	- equals(...) + hashCode()
+	
+집합 자료 : 중복이 없는 자료
+Set - HashSet
+	
+3.  hashCode() 메서드
+- 기본값 : 인스턴스 메서드 
+- 객체를 찾기 위한 용도
+- 동등성 비교 기준
+
+String 클래스
+
+1. String을 선언하는 두 가지 방법
+2. String 클래스의 final char[] 변수
+3. StringBuffer와 StringBuilder 클래스 활용하기
+
+
+Wrapper 클래스
+- 기본 자료형을 위한 클래스
+
+1. Wrapper 클래스의 종류
+
+2. Integer 클래스 사용하기
+1) Integer 클래스의 메서드
+
+3. 오토박싱과 언박싱
+
+
+Class 클래스
+
+1. Class 클래스를 선언하고 클래스 정보를 가져오는 방법
+2. Class 클래스를 활용해 클래스 정보 알아보기
+3. Class.forName()을 사용해 동적 로딩 하기
