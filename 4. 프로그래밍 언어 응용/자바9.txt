@@ -74,10 +74,34 @@ String str2 = new String("가나다");
 
 Wrapper 클래스
 - 기본 자료형을 위한 클래스
+- 기본 자료형 값을 감싼 형태의 클래스
 
 1. Wrapper 클래스의 종류
+byte -> Byte
+short -> Short
+int -> Integer
+long -> Long
+
+float -> Float
+double -> Double
+
+char -> Character
+boolean -> Boolean 
+
 
 2. Integer 클래스 사용하기
+	- 변환 메서드
+	
+class Integer {
+	... 변수, 메서드
+	
+	private final int value;
+	
+	... 변수, 메서드...
+	
+}
+
+
 1) Integer 클래스의 메서드
 
 3. 오토박싱과 언박싱
