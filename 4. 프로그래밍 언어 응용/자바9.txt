@@ -66,8 +66,11 @@ String str = "가나다";
 String str2 = new String("가나다");
 
 2. String 클래스의 final char[] 변수
+-> JDK12 이전 -> char[], JDK12 이후 -> byte[]
+
 3. StringBuffer와 StringBuilder 클래스 활용하기
 
+버퍼(buffer) : 임시 메모리 공간
 
 Wrapper 클래스
 - 기본 자료형을 위한 클래스
