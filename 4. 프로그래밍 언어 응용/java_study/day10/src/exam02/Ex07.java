@@ -7,5 +7,7 @@ public class Ex07 {
         String str = null;
         str = Objects.requireNonNullElse(str, "abc");
         System.out.println(str.toUpperCase());
+
+
     }
 }
