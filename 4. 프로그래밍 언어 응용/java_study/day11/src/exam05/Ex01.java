@@ -6,19 +6,19 @@ public class Ex01 {
         appleBasket.add(new Apple());
         appleBasket.add(new Apple());
 
-        Juicier.make(appleBasket);
+        Juicier.make3(appleBasket);
 
-        Basket<Melon> melonBasket = new Basket<>();
+        Basket<Fruit> melonBasket = new Basket<>();
         melonBasket.add(new Melon());
         melonBasket.add(new Melon());
 
-        Juicier.make(melonBasket);
+        Juicier.make3(melonBasket);
 
         Basket<Toy> toyBasket = new Basket<>();
         toyBasket.add(new Toy());
         toyBasket.add(new Toy());
 
-        Juicier.make(toyBasket);
+        // Juicier.make(toyBasket);
 
     }
 }
