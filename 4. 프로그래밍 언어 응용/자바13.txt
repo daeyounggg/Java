@@ -85,7 +85,7 @@ Collection 인터페이스
 			clear() : 전체 비우기
 			
 		구현 클래스
-			HashSet, TreeSet
+			HashSet, TreeSet(정렬기능)
 			
 Map : 사전 자료 구조
 	- 키 - 값의 순서쌍 구조
@@ -99,7 +99,11 @@ Map : 사전 자료 구조
 3. Iterator, ListIterator, Enumeration
 
 4. Comparator와 Comparable
-
+java.lang.Comparable : 정렬의 기본 기준 (Natural Order)
+	int compareTo(T o)
+		현재 객체의 숫자 - 비교대상 객체 숫자 : 오름차순
+		비교 대상 객체 - 현재 객체 : 내림차순
+		
 5. Arrays
 
 6. Collections
