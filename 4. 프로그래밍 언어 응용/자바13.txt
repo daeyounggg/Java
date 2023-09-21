@@ -104,6 +104,8 @@ java.lang.Comparable : 정렬의 기본 기준 (Natural Order)
 		현재 객체의 숫자 - 비교대상 객체 숫자 : 오름차순
 		비교 대상 객체 - 현재 객체 : 내림차순
 		
+java.util.Comparator : 대안적인 정렬 기준 		
+		
 5. Arrays
 
 6. Collections

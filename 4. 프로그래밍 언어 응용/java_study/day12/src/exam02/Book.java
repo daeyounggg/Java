@@ -35,6 +35,7 @@ public class Book implements Comparable<Book> {
         return Objects.hash(title, author, publisher);
     }
 
+
     @Override
     public int compareTo(Book o) {
         // return title.hashCode() - o.title.hashCode(); // 오름차순 정렬
@@ -42,9 +43,6 @@ public class Book implements Comparable<Book> {
         // return title.compareTo(o.title); // 오름차순 정렬
         // return title.compareTo(o.title) * -1; // 내림차순 정렬
         return o.title.compareTo(title); // 내림차순
-
-
     }
-
 
 }
