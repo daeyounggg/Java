@@ -26,5 +26,44 @@
 4. 함수형 인터페이스(Functional Interface)
 5. 함수형 인터페이스 타입의 매개변수와 반환 타입
 6. java.util.function패키지
+
+1) 매개변수가 X, 반환값 1개 
+	Supplier<T> 
+			: T get() 
+
+2) 매개변수가 1개, 반환값 0개
+	Consumer<T>
+			: void accept(T t)
+
+3) 매개변수가 1개 반환값도 1개
+	Function <T, R>
+			: R apply(T t)
+			
+4) 매개변수가 1개, 반환값은 boolean(논리값) 
+	Predicate<T>
+			: boolean test(T t)
+
+매개변수 2개	
+	
+1) 매개변수가 2개, 반환값 X
+	BiConsumer<T, U>
+			: void accept(T t, U u)
+
+2) 매개변수 2개, 반환값 1개
+	BiFunction<T, U, R>
+			: R apply(T t, U u)
+
+3) 매개변수가 2개, 반환값은 boolean(논리값)
+	BiPredicate<T, U>
+			: boolean test(T t, U u)
+
+매개변수가1, 반환값1 -> 자료형이 모두 동일
+UnaryOperator<T> ---> Function<T, T> 
+	T apply(T t)
+	
+매개변수가 2개, 반환값1 -> 자료형이 모두 동일
+BinaryOperator<T> ---> BiFunction<T, T, T>
+	T apply(T t1, T t2)
+	
 7. Function의 합성과 Predicate의 결합
 8. 메서드 참조
