@@ -66,4 +66,22 @@ BinaryOperator<T> ---> BiFunction<T, T, T>
 	T apply(T t1, T t2)
 	
 7. Function의 합성과 Predicate의 결합
+	
+	Function
+		andThen(Function ...)
+		f.andThen(g) -> f -> g
+		
+		
+		compose(..)
+		g.compose(f) -> f -> g
+		
+	Predicate
+		and
+		or
+		negate
+		
+
 8. 메서드 참조
+	- 람다식을 더욱 간결하게 표현
+	- 클래스명::메서드명
+	- 참조변수::메서드명 
