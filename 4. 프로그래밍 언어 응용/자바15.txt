@@ -53,12 +53,15 @@
 	
 	일반 스트림 -> 기본 자료형 스트림으로 변환 메서드 
 	mapToInt   : IntStream 
+		Stream<Integer> -> IntStream
+			
 	mapToLong : LongStream
 	mapToDouble : DoubleStream
 	
 	기본 자료형 스트림 -> 일반 스트림 변환 메서드 
-	boxed()
+	1) boxed()
 	
+	2) IntStream -> Stream<integer>
 	
 	참고)
 		IntStream 
@@ -116,6 +119,9 @@ skip() : 건너 뛰기
 4) map()
 	map(Function<T,R> ...)  : 변환 메서드 
 	
+	참고)
+		FlatMap
+	
 5) peek()
 	- forEach와 매개변수가 동일 
 	- Stream peek(Consumer<T> ... ) : 중간 연산 : 중간에 값을 확인할 경우 많이 사용 
@@ -168,7 +174,7 @@ T findFirst() : 가장 첫번째 스트림의 요소를 반환
 
 3) count(), sum(), average(), max(), min()
 
-4) reduce()
+4) reduce() : 합성곱
 
 5) collect()
 	Collector
