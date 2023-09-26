@@ -185,5 +185,6 @@ T findFirst() : 가장 첫번째 스트림의 요소를 반환
 			- toCollection() : List, Set의 하위 클래스 객체 
 			
 		7)  joining()
+			-> 콜렉션, 배열 -> 스트림 -> 문자열로 결합
 
 8) groupingBy(), partitioningBy()
