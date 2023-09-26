@@ -187,4 +187,6 @@ T findFirst() : 가장 첫번째 스트림의 요소를 반환
 		7)  joining()
 			-> 콜렉션, 배열 -> 스트림 -> 문자열로 결합
 
-8) groupingBy(), partitioningBy()
+8) 
+	groupingBy() -> 공통 값을 가지고 그룹화
+	partitioningBy() -> true, false 양분
