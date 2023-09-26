@@ -1,0 +1,94 @@
+입출력(I/O)
+java.io
+1. 입출력이란?
+	- Input/Output   입력 / 출력 
+	- 컴퓨터 내부 또는 외부와 프로그램간의 데이터를 주고받는 것
+	
+2. 스트림(stream)
+	- 데이터가 이동하는 통로 
+	- 입력 통로(입력 스트림)
+	- 출력 통로(출력 스트림)
+
+
+바이트기반 스트림 : 데이터 크기가 바이트 단위 / 1바이트씩 읽어오는 스트림
+1. 입력 스트림 - InputStream : 추상 클래스
+	기반 스트림 : 직접 데이터에 접근하는 클래스
+		ByteArrayInputStream : 메모리
+		FileInputStream : 파일
+
+	보조 스트림 : 다른 스트림에 추가 기능을 추가하는 스트림
+		FilterInputStream : 보조 스트림의 상위 클래스
+			- BufferedInputStream : 다른 스트림에 버퍼기능 추가
+			- DataInputStream : 다른 스트림에 기본 자료형으로 데이터를 읽어 올 수 있는 추가 기능 
+			
+		ObjectInputStream : 객체 형태로 읽어 올 수 있도록 변환기능 추가 	
+		
+2. 출력 스트림 - OutputStream : 추상 클래스
+	기반 스트림 : 직접 데이터에 접근하는 스트림
+		ByteArrayOutputStream : 메모리 기반
+		FileOutputStream : 파일 기반
+		
+	보조 스트림 : 다른 스트림에 기능을 추가하는 스트림
+		FilterOutputStream : 보조 스트림의 상위 클래스
+			- BufferedOutputStream : 다른 스트림에 버퍼기능 추가
+			- DataOutputStream : 다른 스트림에 기본 자료형으로 데이터를 쓸 수 있는 추가기능
+		
+		ObjectOutputStream : 객체 형태로 쓸 수 있도록 변환 기능 추가
+		
+		참고)
+			데코레이터 패턴
+			class BufferedInputStream extends InputStream {
+				private InputStream in;
+				
+				public BufferedInputStream(InputStream in){
+					this.in = in;
+					
+				}
+				
+				public int read() {
+					
+					// 추가 기능 - 버퍼 제공 
+					
+					int ch = in.read(); // 대신 제공
+					
+					// 추가 기능
+					
+					return ch;
+				}
+			}
+		
+문자기반 스트림 : 데이터 크기가 문자 단위(유니코드 - 2, 3 바이트)
+1. 입력 스트림 - Reader : 추상 클래스	
+	기반 스트림 
+		CharArrayReader : 메모리 기반
+		StringReader : 메모리 기반
+		FileReader : 파일 기반 
+		
+	보조 스트림 
+		FilterReader
+			- BufferedReader
+		
+		InputStreamReader : 바이트 기반 스트림(InputStream) 
+	
+2. 출력 스트림 - Writer : 추상 클래스
+
+
+표준입출력 : 콘솔에 입력, 출력
+1. System.in : InputStream 
+2. System.out : PrintStream
+3. System.err : PrintStream 
+
+File 
+
+
+직렬화(Serialization)
+- 객체에 저장된 데이터를 스트림에 쓰기(write)위해 연속적인(serial) 데이터로 변환하는 것을 말한다.
+1. ObjectInputStream
+2. ObjectOutputStream
+
+
+
+참고)
+	InputStreamReader : 바이트 단위 입력 스트림 -> 문자 단위 
+	
+	OutputStreamWriter : 바이트 단위 출력 스트림 -> 문자 단위
