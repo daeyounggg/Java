@@ -32,7 +32,9 @@ java.io
 		FilterOutputStream : 보조 스트림의 상위 클래스
 			- BufferedOutputStream : 다른 스트림에 버퍼기능 추가
 			- DataOutputStream : 다른 스트림에 기본 자료형으로 데이터를 쓸 수 있는 추가기능
-		
+						- 끝까지 다 읽으면 EOFException 발생
+							EOF(End Of File)
+							
 		ObjectOutputStream : 객체 형태로 쓸 수 있도록 변환 기능 추가
 		
 		참고)
@@ -79,7 +81,23 @@ java.io
 3. System.err : PrintStream 
 
 File 
+- 파일, 디렉토리
+- 파일, 디렉토리 정보, 편의 기능 
+- separator, pathSeparator
 
+OS 
+	separator : 디렉토리 구분 문자
+	- 리눅스, 맥
+		/home/project
+		
+	- 윈도우즈
+		C:\Users\Ad...
+		
+		C:/Users/Ad...
+	
+	pathSeparator : 환경 변수 구분 문자
+		- 리눅스, 맥 - : 
+		- 윈도우즈 - ;
 
 직렬화(Serialization)
 - 객체에 저장된 데이터를 스트림에 쓰기(write)위해 연속적인(serial) 데이터로 변환하는 것을 말한다.
