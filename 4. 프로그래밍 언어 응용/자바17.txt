@@ -125,5 +125,3 @@ java.time.format
 	DateTimeFormatter 
 			DateTimeFormatter state ofPattern("패턴")
 					.format(TemporalAccessor ...)
-					
-					
