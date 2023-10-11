@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="492630ab-de36-4dfc-9f55-b7ae0818252f" name="변경" comment="TDD">
-      <change afterPath="$PROJECT_DIR$/src/test/java/exam02/TDDTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/models/member/RequestLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/JoinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/JoinService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/JoinServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../새로운 2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../새로운 2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TDDTest2.test2">
+  <component name="RunManager" selected="JUnit.LoginServiceTest.loginSuccess">
     <configuration name="JoinServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day02" />
       <extension name="coverage">
@@ -81,7 +80,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoinServiceTest.requiredFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginServiceTest.loginSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day02" />
       <extension name="coverage">
         <pattern>
@@ -90,8 +89,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoinServiceTest" />
-      <option name="METHOD_NAME" value="requiredFields" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginServiceTest" />
+      <option name="METHOD_NAME" value="loginSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginServiceTest.loginSuccess" />
         <item itemvalue="JUnit.TDDTest2.test2" />
         <item itemvalue="JUnit.TDDTest2.test1" />
         <item itemvalue="JUnit.JoinServiceTest" />
         <item itemvalue="JUnit.JoinServiceTest.joinSucess" />
-        <item itemvalue="JUnit.JoinServiceTest.requiredFields" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697003462485</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="TDD">
+      <created>1697005862945</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697005862945</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
