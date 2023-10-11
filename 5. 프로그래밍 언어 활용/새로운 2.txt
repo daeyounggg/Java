@@ -50,6 +50,9 @@ TDD 기본 원칙
 	- 단위 테스트 메서드 위
 
 6. 모든 테스트 실행하기
+	maven test
+	gradle test
 
 7. @TempDir
+
 8. @Timeout 
