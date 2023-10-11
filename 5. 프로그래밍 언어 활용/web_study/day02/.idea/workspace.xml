@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="492630ab-de36-4dfc-9f55-b7ae0818252f" name="변경" comment="TDD">
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/member/RequestLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" afterDir="false" />
+    <list default="true" id="492630ab-de36-4dfc-9f55-b7ae0818252f" name="변경" comment="로그인">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/RequestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/RequestLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +47,7 @@
     "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.LoginServiceTest.loginSuccess">
+  <component name="RunManager" selected="JUnit.LoginServiceTest">
     <configuration name="JoinServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day02" />
       <extension name="coverage">
@@ -64,7 +63,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoinServiceTest.joinSucess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day02" />
       <extension name="coverage">
         <pattern>
@@ -73,9 +72,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.JoinServiceTest" />
-      <option name="METHOD_NAME" value="joinSucess" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginServiceTest" />
         <item itemvalue="JUnit.LoginServiceTest.loginSuccess" />
         <item itemvalue="JUnit.TDDTest2.test2" />
         <item itemvalue="JUnit.TDDTest2.test1" />
         <item itemvalue="JUnit.JoinServiceTest" />
-        <item itemvalue="JUnit.JoinServiceTest.joinSucess" />
       </list>
     </recent_temporary>
   </component>
@@ -189,12 +187,20 @@
       <option name="project" value="LOCAL" />
       <updated>1697005862945</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="로그인">
+      <created>1697007930503</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697007930503</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lombok" />
     <MESSAGE value="TDD" />
-    <option name="LAST_COMMIT_MESSAGE" value="TDD" />
+    <MESSAGE value="로그인" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그인" />
   </component>
 </project>
