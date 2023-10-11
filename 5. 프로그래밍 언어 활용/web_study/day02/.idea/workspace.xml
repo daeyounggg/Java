@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="492630ab-de36-4dfc-9f55-b7ae0818252f" name="변경" comment="로그인">
+    <list default="true" id="492630ab-de36-4dfc-9f55-b7ae0818252f" name="변경" comment="TDD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/models/member/RequestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/models/member/RequestLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../새로운 1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../새로운 2.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,13 +193,20 @@
       <option name="project" value="LOCAL" />
       <updated>1697007930503</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="TDD">
+      <created>1697008759514</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697008759514</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lombok" />
-    <MESSAGE value="TDD" />
     <MESSAGE value="로그인" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그인" />
+    <MESSAGE value="TDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="TDD" />
   </component>
 </project>

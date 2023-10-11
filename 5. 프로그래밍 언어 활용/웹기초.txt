@@ -1,0 +1,90 @@
+개발환경 구축
+src/main/webapp
+		- HTML, JS, CSS, JSP 
+src/main/webapp/WEB-INF
+								- web.xml : 애플케이션 배치 설명자 파일
+													- 서블릿, 필더 등등 배치에 대한 설정
+								- lib : 자바 라이브러리 jar
+								- classes : 컴파일된 class
+
+메이븐 프로젝트 
+	classes -> target
+	lib -> src/main/resources
+
+웹 기초
+1. 요청과 응답 이해하기
+	요청(request) : 브라우저
+	응답(response) : 서버
+
+	요청 전문 
+		헤더(header)
+			: 요청 쪽 정보
+			- 요청 URL / 요청 IP
+			- 요청 방식(method)
+			- 요청한 브라우저의 환경 정보(언어 ...)
+			- 쿠키 정보(브라우저에 저장된 데이터의 일종)
+			- 브라우저 정보(User-Agent)
+		
+		바디(body)
+			- 요청한 쪽 데이터(요청 방식이 - POST)
+	
+			
+		
+	응답 전문
+		헤더(header)
+			- 응답 body 데이터의 정보
+			- Content-Type
+			- 응답 상태 코드
+				2xx
+						200(OK) : 정상응답(서버를 거친 후 응답)
+						201(CREATED) : 서버에서 데이터 정상 반영
+				
+				3xx
+						301(영구이동), 302(임시이동)
+						304(캐시됨)
+						
+				4xx 클라이언트 오류
+						400(BadRequest - 잘못된 요청)
+							- 요청 데이터를 정해진대로 전송하지 않은 경우
+							
+						401(Unauthorized - 접근 권한 없음)
+						403(Forbidden - 금지됨)
+						404(Not Found - 페이지 없음)
+						405(Method Not Allowed)
+						
+				5xx
+						500(Internal Server Error)
+						501, 503(Service Unavailable)
+						
+			- 서버쪽에서 브라우저에 대한 행위(명령)
+				Location: 주소 -> 브라우저의 주소 변경 -> 이동
+				Set-Cookie: 키=값, 키=값; ... -> 브라우저에 쿠키 저장
+				Refresh: 주기 -> 주기대로 새로고침...
+				Cache-Control: no-cache -> 캐시 저장 XML
+				참고) 캐시 -> 임시 데이터
+				
+		바디(body)	
+			- 응답 데이터
+			
+2. HTTP ( HyperText Transfer Protocol)
+3. 헤더(header)
+4. HTTP 상태 코드
+5. HTTP 요청 메서드
+
+1) GET
+	- 조회
+	주소 ? 뒤에 있는 것 : 퀴리스트링(querystring)
+	
+	- 요청 데이터가 주소에 포함
+	- 요청 바디는 비어있다.
+	
+2) POST
+	- 서버에 데이터 등록, 변경 
+
+서블릿(Servlet)
+1. 서블릿(Servlet)의 개요
+2. 서블릿(Servlet) 클래스 작성하기
+3. web.xml 파일에 서블릿(Servlet) 등록하기
+4. XML 문법의 기초
+5. 웹 브라우저로부터 데이터 입력 받기
+6. init메서드와  destroy 메서드
