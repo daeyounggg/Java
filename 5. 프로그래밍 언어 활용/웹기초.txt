@@ -2,10 +2,17 @@
 src/main/webapp
 		- HTML, JS, CSS, JSP 
 src/main/webapp/WEB-INF
+<<<<<<< HEAD
 		- web.xml : 애플케이션 배치 설명자 파일
 		- 서블릿, 필더 등등 배치에 대한 설정
 		- lib : 자바 라이브러리 jar
 		- classes : 컴파일된 class
+=======
+								- web.xml : 애플케이션 배치 설명자 파일
+													- 서블릿, 필더 등등 배치에 대한 설정
+								- lib : 자바 라이브러리 jar
+								- classes : 컴파일된 class
+>>>>>>> 4085e004045d4822ed0b97d14bae0f866853f68b
 
 메이븐 프로젝트 
 	classes -> target
@@ -77,7 +84,7 @@ src/main/webapp/WEB-INF
 	
 	- 요청 데이터가 주소에 포함
 	- 요청 바디는 비어있다.
-	- DELETE
+
 	
 2) POST
 	- 서버에 데이터 등록, 변경 
@@ -130,6 +137,16 @@ JDBC API
 HttpServletRequest : 요청 
 
 HttpServletResponse : 응답
+
+	
+2) POST
+	- 서버에 데이터 등록, 변경 
+
+서블릿(Servlet)
+1. 서블릿(Servlet)의 개요
+2. 서블릿(Servlet) 클래스 작성하기
+3. web.xml 파일에 서블릿(Servlet) 등록하기
+4. XML 문법의 기초
 
 5. 웹 브라우저로부터 데이터 입력 받기
 6. init메서드와  destroy 메서드
