@@ -1,0 +1,20 @@
+유용한 클래스
+1. java.lang.Math 클래스
+	abs(...) : 절대값 - 음수 - 양수
+	sign(...) : 부호, 음수(-1), 0, 양수(1)
+	
+	round(...) 반올림
+	ceil(...) 올림
+	floor(...) 버림
+	
+	random() : 0~1미만의 double 난수
+	sqrt(...)
+	
+2. java.util.Objects 클래스
+	
+
+3. java.util.Random 클래스
+
+
+4. java.util.Scanner 클래스
+5. java.util.StringTokenizer 클래스

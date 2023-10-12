@@ -1,0 +1,101 @@
+git - 형상관리 툴(버전관리)
+
+1. git 설치
+
+2. 로컬 레포지토리(로컬 저장소)
+	- 형상(버전)을 관리, 저장할수 있는 공간 
+	git init 
+		/ .git 
+		
+	참고)
+		cd : 디렉토리 변경
+		dir : 현재 디렉토리의 파일 목록, 디렉토리 목록
+				/ p -> 페이지 단위, / w -> 가로로 넓게
+		cls : 화면 지우기
+		
+		
+3. 계정 연결
+	- 원격 레포지토리 : 깃허브, 깃랩, 비트버킷...
+	
+	git config --global  user.name "yonggyo1125"
+	git config --global user.email "yonggyo00@kakao.com"
+	
+형상관리
+1. 스테이지 단계
+	git add 반영할 파일명 또는 경로
+				. (모든 변경된 파일)
+	
+	git add .
+	
+2. 스냅샷 단계
+	- 스테이지 단계에 있는 변경된 파일 또는 추가된 파일 -> 시점을 기록 
+	- 커밋 단계 
+	
+	git commit -m "작업 내용 메모"
+	
+3. 커밋 로그
+	git log  : 커밋한 시점별 기록 
+	
+	git log --oneline
+	
+4. 버전 관리
+	git checkout 커밋 ID
+	
+	git checkout - : 이전 커밋 시점으로 복구 
+
+5. 브랜치 관리
+	git branch 브랜치명 
+		-> 현재 브랜치 기준 -> 새로운 브랜치
+		-> 주문, 회원, 장바구니
+	
+	git branch -m 브랜치명 : 현재 브랜치의 명을 변경 
+				   -M : 강제 변경 
+				   
+	git branch -d 브랜치명 : 브랜치 삭제 
+	               -D : 강제 삭제 
+	
+	참고)
+		git branch : 브랜치 목록 
+6. 브랜치 변경
+	git checkout 브랜치명
+	
+7. 소스 합치기
+	git merge 병합할 브랜치 
+	- 현재 브랜치에 병합할 브랜치의 소스가 통합
+	
+	- 테스트가 반드시 수행 
+	- 테스트 브랜치 생성하고 병합하고 -> 테스트 진행 -> master 브랜치에 병합
+	
+8. 원격 레포지토리 
+	- 로컬 레포지토리 -> 원격 레포지토리 상태 반영  -> 다른 로컬 레포지토리에서 동기화
+	
+	git remote add origin 원격 레포지토리 주소
+	
+	참고)
+		git remote set-url origin 수정할 원격 레포지토리 주소
+	
+	
+	로컬 레포지토리 상태 -> 원격 레포지토리 상태로 반영 
+	git push origin 원격 레포지토리 브랜치명
+	
+	원격 레포지토리 상태 -> 로컬 레포지토리 상태 반영
+	git pull origin 원격 레포지토리 브랜치명 - 동기화
+	
+	git clone 원격 레포지토리 주소 
+		-> git init + git remote add ... + git pull origin ...
+		
+		
+		
+.gitignore 
+	- 원격 레포지토리 반영 제외
+	
+	
+태그 - 버전별 / 릴리즈 (배포)
+
+git tag -> 현재 태그 목록
+
+git tag -a 태그 : 태그 등록
+		 -l "태그명 패턴"
+		 
+		 
+ESC -> : -> wq 

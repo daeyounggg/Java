@@ -1,0 +1,70 @@
+HTML Forms : 양식
+<form>
+		- action : 처리할 경로 / 서버 경로
+		- method : 제출 방법
+						GET, POST
+						
+1. <input> 요소
+		type 	: text - 한줄 입력
+				: password - 비밀번호 적용 / 안보임 처리
+				
+				: radio - 여러개 중에서 한개 선택
+				: checkbox - 여러개 중에서 여러개 선택
+					- radio,checkbox + label 태그와 함께 많이 사용
+					1) <label><input ... > 텍스트 </label> : 텍스트만 클릭해도 체크, 체크 해제
+					2) <input type="checkbox|radio" id="이름">
+						<label for="이름">텍스트</label>
+						
+					- checked : 체크된 상태 	
+						
+				: submit - 제출 버튼, value : 버튼명
+				: reset - 다시 입력, value : 버튼명	
+					참고)
+						button 태그
+							type : button - 일반 버튼
+									submit - 제출 버튼
+									reset - 다시 입력 버튼 
+									
+				: number - 숫자만 입력
+				: email - 이메일 형식 체크
+				: date - 날짜 : 달력 노출
+				: color - 색상, 색상표 
+				: range - 범위 선택 
+							min : 최소값
+							max : 최대값
+				
+				: hidden - 입력 용도 X, 값만 전달하기 위한 목적 
+ 				
+		name : 전송할 데이터의 항목명
+		value : 입력 항목 값 / text, password ... 직접 입력을 하는 항목은 입력한 값이 자동으로 value 속성에 추가
+		
+		required : 필수 입력 항목 
+		placeholder : 안내문구 
+		
+참고)
+/join_ps.html?user_type=on				
+				
+2. <select> 요소
+	
+	<select>
+		<option value="값1">...</option>
+		<option value="값2">...</option>
+		<option value="값3">...</option>
+		<option value="값4">...</option>
+	</select>
+	
+	option
+		- selected : 선택 상태
+	
+	select
+		size="노출될 항목 갯수" 
+		multiple : 여러개 선택 
+	
+3. <textarea> 요소
+	: 여러줄 입력
+	- rows : 노출되는 행의 갯수
+	- cols : 노출되는 열의 갯수
+	
+	<textarea>...value...</textarea>
+	
+4. Form 속성(Attributes)

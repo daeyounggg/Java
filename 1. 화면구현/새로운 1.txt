@@ -1,0 +1,242 @@
+HTML
+1. 정의
+HTML은 Hyper Text Markup Language의 약자입니다.
+HTML은 웹페이지를 만드는 대표적인 마크업 언어입니다
+HTML은 웹페이지의 구조를 표현합니다.
+HTML은 여러 요소로 구성되어 있습니다
+HTML은 브라우저에 어떻게 내용을 표시할지 알려주는 역할을 합니다.
+
+2. 기본 구조
+	1) 태그 형태
+		여는 태그	 닫는 태그
+		<태그명> ..... </태그명>
+	
+	2)
+		<!DOCTYPE html> : HTML 문서의 버전 (HTML5)
+		<html>
+			<head></head> : 사이트에서 보이지 않는 부분, 사이트 정보, 사이트의 자원(CSS, JS)
+			<body></body> : 사이트에서 보이는 부분 
+		</html>
+	
+VSCODE	
+	
+3. HTML 요소 : 태그
+	<태그명> 내용 ... </태그명>
+	<태그명 /> : 내용이 없는 단일 태그 : /는 생략 가능  
+		예) <meta /> -> <meta>
+			<br /> : 줄 개행 -> <br>
+			
+4. HTML 속성(attribute)
+	- 태그에 있는 부가적인 정보
+	- <태그명 속성명="값" ... 
+	- 태그 본연의 기능과 관련된 정보로써도 사용되기도 한다.
+	
+	예) a : 페이지 이동 
+			- href="주소 정보"
+	
+5. 속성 권장사항
+	- 소문자로 입력 
+	
+6. 헤더(Headings) 태그 
+	- 제목을 표현하는 태그 
+	<h1~6>...</h1~6>
+	
+	- 숫자 작으면 주 제목
+	- 숫자 커지면 부 제목 
+	
+	참고) HTML 문서(Document)
+
+7. 문단(Paragrahs) 태그 
+	- <p>문단 ...</p>
+
+8. 서식(Text Formatting) 태그
+<b> 굵은 텍스트 정의
+
+<em> 강조된 텍스트 정의
+
+<i> 기울임 꼴 텍스트 정의
+
+<small> 더 작은 텍스트 정의
+
+<strong> 중요한 텍스트 정의 
+	-<sub> 아래 첨자 텍스트 정의
+	-<sup> 윗 첨자 텍스트 정의 
+	-<ins> 첨가 텍스트 정의 
+	-<del> 지운 텍스트 정의 
+	-<mark> 마킹 / 강조된 텍스트 정의
+
+9. 인용, 인용문, 정의 태그
+<abbr> 약어(abbreviation) 및 머리 글자(acronym)를 정의
+<address> 문서의 작성자 / 소유자에 대한 연락처 정보를 정의
+<bdo> Defines the text direction
+<blockquote> 다른 소스에서 인용되는 부분을 정의
+<q> 인라인 (짧은) 인용을 정의
+<cite> 작품의 제목을 정의합니다
+<dfn> 정의 용어(definition term) 정의
+
+참고) 제일 많이쓰는 태그
+	div, span
+	
+10. 주석(Comment)
+	- 설명 
+	- 브라우저가 해석하지 않는 문법 : 출력 X
+	- 출력 배제의 역할 
+	
+	<!-- 설명... -->
+
+11. 링크(Links)
+	a 태그 : 페이지 이동
+	
+1) href 속성
+	: 이동 경로에 대한 정보 
+	
+2) target 속성 
+		- _self (기본값) : 현재 창
+		- _blank : 새창 
+		- _parent : 부모 창	
+		- _top : 가장 상위 창 
+		- iframe name 값 : 창의 이름 
+		
+		부모 -> 자식 창
+	 
+	참고)
+		창(window)
+
+		iframe 태그 : 문서 내부에 포함할 수 있는 브라우저 창
+				- src : 창에 표현할 주소
+				- width : 너비
+				- height : 높이
+				- name="창의 이름"
+				
+		부모 창 : 바로 위 창
+		자식 창 : 바로 아래 창 
+		
+3) 경로
+img : 
+	src="이미지 파일의 경로"
+
+- 절대경로 
+	: 처음 위치부터 최종 파일 위치까지의 전체 경로
+	: 경로명이 변경되면 자원 접근 X
+
+- 상대경로
+	: 경로를 상대적으로 접근 
+	: 경로의 비교 기준(기준 경로) 
+	
+	예)
+	file:///C:/Users/Administrator/Desktop/김대영(B2)\1. 화면구현\html\day01\ : 기준경로
+	file:///C:/Users/Administrator/Desktop/김대영(B2)\1. 화면구현\html\day01\logo.png 
+	
+	src="logo.png"
+	
+12. 이미지(images)
+	<img>
+		src="이미지 경로" 
+		width : 너비
+		height : 높이 
+		
+		권장사항 : 너비, 높이 둘중 하나의 기준으로 크기 변경 
+		
+13. 테이블(Tables)
+	- 표를 만들 수 있는 태그
+	<table>
+		<thead> : 컬럼명
+			<tr>
+				<th>컬럼명...</th>
+				...
+			</tr>
+			<tbody>
+				<tr>
+					<td>데이터...</td>
+					...
+				</tr>
+			</tbody>
+			<tfoot>
+				표의 요약 정보 
+			</tfoot>
+	</table>
+	
+	td, th
+		- align="left | right | center" 
+		- valign="top | bottom | middle
+		- rowspan="병합할 행의 갯수"
+		- colspan="병합할 열의 갯수"
+		
+14. 리스트(Lists) 태그
+	ul (unordered list - 순서 표기가 없는 목록)
+		li : 목록 항목
+		
+		- style
+			list-style-type
+				: disc - 채워진 원 | circle - 채워지지 않은 원 | square - 사각형 | none - 없음
+		
+	ol (ordered list - 순서 표기가 있는 목록)
+		- type : 1(기본값, 순서 표기가 숫자), A, a - 알파벳 li -> 로마자 표기법
+		li : 목록 항목
+		
+	설명 리스트
+	dl (description list)
+		dt : 항목명
+		dd : 항목 내용
+		
+15. Block & Inline 요소
+	문서
+		문단 (Block)
+			: p, div, section, ...
+			
+			1) 줄개행 
+			2) 공간이 존재 : 너비, 높이 지정 O
+			3) 외부 여백 : 모든 방향(상하좌우) 적용 가능 
+			
+		문장(글) (Inline)
+			: a, span, i ...
+			1) 줄개행 X, 너비의 끝에 도달하면 다음줄로 개행 
+			2) 너비, 높이 지정 X
+			3) 외부 여백:  좌우만 적용 가능 
+	
+16. class 속성
+	: 대상을 선택할때 사용하는 속성 - 복수개 선택 가능
+	
+17. id 속성
+	: 대상을 선택할때 사용하는 속성 - 단일 선택
+	
+18. iframes
+	- name : 창의 이름 
+	- src : 주소
+	- width, height : 너비, 높이
+	- frameborder : 1(테두리 있음), 0(테두리 없음)
+	- scrolling : yes - 노출, no - 노출 없음, auto - 자동
+
+19. Javascript
+	<script>
+		자바스크립트 코드 : 자바스크립트 해석 엔진이 해석하는 코드 (V8)
+	</script>
+	
+20. Head
+1) charset
+2) keywords
+3) author
+4) refresh
+5) viewport : 보이는 화면
+	- 모바일 페이지 작업시 필수 요소
+	- width : 너비 기준 - device-width, 사이즈를 장비 사이즈 너비 기준으로 상대적으로 변경
+	- user-scaleable : yes - 확대 축소 가능, no - X 
+	- initial-scale : 처음 보이는 화면 배율
+	- maximum-scale : 최대 확대 가능 비율 예) 3.0 : 300%
+	- minimum-scale : 최대 축소 가능 비율 예) 0.5 : 50%
+	
+	참고)
+		픽셀(px) : 화소 단위 크기
+			1px - 1화소
+
+21. 시멘틱 요소(Semantic Elements)
+	- 의미를 가지고 있는 태그
+	table
+	form
+
+22. 엔티티(Entities)
+	공백을 띄어도 1개만 인식
+	공백1개 : &nbsp; 
+	&lt; : 작다
+	&gt; : 크다 
+	&amp : &

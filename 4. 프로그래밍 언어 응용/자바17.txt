@@ -1,0 +1,127 @@
+날짜와 시간
+1. Date
+	JDK 1.0
+
+2. Calendar 
+	JDK 1.1
+		- 설계가 빈약
+		- static Calendar getInstance()
+			- 서기 달력외에 다른 체계 달력(불기)을 지역화 설정에 따라 객체 생성
+			
+		- int get(날짜 시간 필드)  : 날짜, 시간 조회
+		- void set(날짜 시간 필드, 값) : 날짜, 시간 변경 
+			- 날짜 시간 변경시 원 객체가 변경 : 불변성 유지 X
+				: java.time 패키지에서 변경 : 날짜 시간의 불변성 유지, 변경 할때마다 새로운 객체 반환
+				
+		- add(...) : 양수 : + 
+		              음수 : -
+		- roll(...) : 
+		
+					  
+java.time 패키지
+	JDK8
+	1. 설계의 보완
+	2. 날짜/시간의 불변성
+		- 날짜, 시간의 변경시 -> 새로운 객체 생성
+	3. 메서드 명칭에서 오는 모호함을 개선(plus, minus)
+	
+- java.time : 핵심 클래스 
+	1. Temporal, TemporalAccessor, TemporalAdjuster 인터페이스 
+		
+		LocalDate : 날짜
+						LocalDateTime atTime(LocalTime .. )
+		LocalTime : 시간
+						LocalDateTime atDate(LocalDate ...)
+		
+		LocalDateTime : 날짜 + 시간 
+							LocalDate + LocalTime
+		
+							ZonedDateTime atZone(ZoneId ...) : 날짜 시간 + 시간대 
+							OffsetDateTime atOffset(ZoneOffset ...);
+							
+		ZonedDateTime : 날짜와 시간(LocalDateTime) + 시간대(ZoneId)
+								ZoneId 
+										.of(시간대 아이디)
+										
+										예) ZoneId.of("Asia/Seoul");
+										
+							ZonedDateTime withZoneSameInstant(ZoneId zone) : 시간대 변경
+								
+							
+		OffsetDateTime : 날짜와시간 (LocalDateTime) + 시간대(ZoneOffset)
+									ZoneOffset	
+												.of("+9")
+								
+								OffsetDateTime withOffsetSameInstant(ZoneOffset offset)
+												
+									
+						
+		Instant : Epoch Time 
+						1970.1.1 00:00:00 UTC+0 / 1/1000초 단위로 카운팅한 수치 
+						참고) Timestamp - 초 단위 카운팅
+		
+	
+	2. TemporalAmount
+			Period : 시간의 차이(초, 나노 초)
+			
+			Duration 날짜의 차이
+				between(LocalDate sdate, LocalDate edate)
+				
+	
+- java.time.format : 형식화 클래스 
+				DateTimeFomatter
+				
+- java.time.temporal : 날짜, 시간의 단위, 필드
+				TemporalField - 필드
+				ChronoFIeld             
+				(enum)                    
+				
+				TemporalUnit - 단위 
+				ChronoUnit
+				(enum)
+				
+- java.time.zone : 시간대 관련 클래스 
+				ZoneId :  Asia/Seoul
+				ZoneOffset : +9
+
+
+1. java.time 패키지의 핵심 클래스
+
+1) LocalDate와 LocalTime
+- 특정 필드의 값 가져오기 - get(), getXXX()
+	int get(필드 명);
+
+- 필드의 값 변경하기 - with(), plus(), minus()
+	LocalDate with() : 날짜/시간 변경
+	LocalDate plus() : 날짜/시간 +
+	LocalDate minus() : 날짜/시간 -
+
+- 날짜와 시간의 비교 - isAfter(), isBefore(), isEqual()
+	- compareTo() : -1 : isBefore()
+	- compareTo() : 0 : isEqual()
+	- compareTo() : 1 : isAfter()
+	
+
+2. Period와 Duration
+
+3. 객체 생성하기 - now(), of()
+	now() : 현재 날짜,시간 
+	of(....)
+
+
+4. Temporal과 TemporalAmount
+
+5. Instant
+
+
+파싱과 포맷
+java.time.format 
+
+1. parse()
+	형식화 문자열 -> 날짜/시간
+	- 핵심 클래스 (LocalDate, LocalTime, LocalDateTime ... )
+	
+2. format() : 날짜/시간 -> 형식화 문자열 
+	DateTimeFormatter 
+			DateTimeFormatter state ofPattern("패턴")
+					.format(TemporalAccessor ...)

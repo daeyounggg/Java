@@ -1,0 +1,51 @@
+다중행 함수와 데이터 그룹화
+- 하나의 열에 출력 결과를 담는 다중행 함수
+- 여러 행의 결과 -> 하나의 행의 결과
+- 통계 관련 함수
+
+1. SUM : 합계 
+2. COUNT : 행의 갯수, 컬럼의 값의 갯수
+	COUNT(컬럼명) -> NULL을 제외한 갯수 : SELECT COUNT(COMM) FROM EMP;
+	COUNT(*) -> 행의 갯수 : SELECT COUNT(*) FROM EMP;
+	
+3. 
+- MAX : 최대값
+- MIN : 최소값
+
+SELECT MAX(SAL) 최대급여, MIN(SAL) 최소급여 FROM EMP
+WHERE DEPTNO IN (10,30);
+
+4. AVG : 평균
+
+- 연산에서 NULL은 제외 
+
+집계합수([ALL - 기본값|DISTINCT - 유일한 값] 컬럼명)
+
+
+결과 값을 원하는 열로 묶어 출력하는 GROUP BY절
+- 특정 컬럼의 같은 값으로 묶어 주는 구문 
+- 통계(집계) 함수와 함께 많이 사용 
+
+1. GROUP BY 절의 기본 사용법
+SELECT ... 
+FROM 테이블명 
+WHERE 조건식 
+GROUP BY 그룹화할 컬럼명(여러개 지정)
+
+ORDER BY ....
+
+2. GROUP BY절을 사용할 떄 유의점
+	- 컬럼명은 반드시 GROUP BY에 사용된 컬럼명만 조회 가능
+	
+3. HAVING절
+	- *** 통계(집계) 함수는 WHERE절에서 사용 불가  ***
+	- 통계(집계) 함수의 조건식 HAVING 절에서 사용 가능 
+	
+1) 기본 사용법
+2) 유의점
+- WHERE절은 출력 대상 행을 제한하고, HAVING절은 그룹화된 대상을 출력에서 제한
+
+ 그룹화 관련 함수 
+ 1. ROLLUP
+ 
+ 2. CUBE
