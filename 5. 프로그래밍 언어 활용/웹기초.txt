@@ -138,15 +138,6 @@ HttpServletRequest : 요청
 
 HttpServletResponse : 응답
 
-	
-2) POST
-	- 서버에 데이터 등록, 변경 
-
-서블릿(Servlet)
-1. 서블릿(Servlet)의 개요
-2. 서블릿(Servlet) 클래스 작성하기
-3. web.xml 파일에 서블릿(Servlet) 등록하기
-4. XML 문법의 기초
 
 5. 웹 브라우저로부터 데이터 입력 받기
 6. init메서드와  destroy 메서드
