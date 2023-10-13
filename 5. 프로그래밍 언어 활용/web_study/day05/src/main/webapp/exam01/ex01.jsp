@@ -1,0 +1,21 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<%
+    // _jspService(...) 메서드 지역 안에 번역, 내장객체 사용가능 , 메서드 정의불가
+    int num1 = 100;
+    int num2 = 200;
+    // out.write("합계 : " + (num1 + num2 + num3 + num4));
+    // out.write("합계 : " + add(num1, num2));
+    int result = add(num1,num2);
+%>
+<%=result%>
+
+<%!
+    // 클래스명 바로 아래쪽 - 멤버 변수, 메서드 사용가능 ...
+    int num3 = 300;
+    int num4 = 400;
+
+    int add(int num1, int num2) {
+            return num1 + num2;
+        }
+%>
