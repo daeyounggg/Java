@@ -20,6 +20,23 @@
 4. param 액션 태그의 기능과 사용법
 	- param 액션 태그는 현재 JSP 페이지에서 다른 페이지에 정보를 전달하는 태그
 	
+서블릿
+	RequestDispatcher 인터페이스
+		forward(HttpServletRequest, HttpServletResponse) : <jsp:forward ... />
+		include(HttpServletRequest, HttpServletResponse) : <jsp:include ... />
+		
+MVC 모델
+
+M(Model) - 기능(Service) 
+			- DTO(Data Transfer Object) - 데이터 객체(멤버 변수 + getter, setter ... ) / VO(Value Object) 
+			- Validator : 유효성 검사 
+			- DAO(Data Access Object) - 데이터 접근 객체 
+			...
+
+V(View) - 출력 템플릿 영역 - JSP
+
+C(Controller) - 요청과 응답 중재자 - 서블릿(Servlet)
+	
 5. 자바빈즈 액션 태그의 기능과 사용법
 1) 자바빈즈 :  데이터 표현을 목적으로 하는 자바 클래스
 2) 자바빈즈 작성 규칙
