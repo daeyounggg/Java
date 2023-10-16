@@ -81,6 +81,9 @@ JSP 생명 주기
 		- jstl-api 
 		- jstl 구현체 
 	
+	참고)
+		uri="http://java.sun.com/jsp/jstl/core"
+	
 JSP의 주석 처리
 <%-- 주석 --%> : 번역 X
 
