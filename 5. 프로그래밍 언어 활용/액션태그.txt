@@ -24,6 +24,8 @@
 	RequestDispatcher 인터페이스
 		forward(HttpServletRequest, HttpServletResponse) : <jsp:forward ... />
 		include(HttpServletRequest, HttpServletResponse) : <jsp:include ... />
+	
+	- 구현 객체 : 요청 처리 과정중에 생성 - HttpServletRequest::getRequestDispatcher(...)
 		
 MVC 모델
 

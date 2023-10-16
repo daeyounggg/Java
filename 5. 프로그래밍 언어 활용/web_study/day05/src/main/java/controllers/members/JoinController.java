@@ -1,5 +1,6 @@
 package controllers.members;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,7 +13,8 @@ import java.io.IOException;
 public class JoinController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/templates/member/join.jsp");
+        rd.forward(req, resp);
     }
 
     @Override
