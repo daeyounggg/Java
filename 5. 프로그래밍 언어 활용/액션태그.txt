@@ -47,5 +47,56 @@ C(Controller) - 요청과 응답 중재자 - 서블릿(Servlet)
 	- private  범위의 멤버 변수 + getter,setter
 	
 3) useBean 액션 태그로 자바빈즈 사용하기
+	id : 
+	class : 
+	scope : -> 생성된 객체 id 변수가 유지될 속성 범위
+			- page : 기본값 : PageContext pageContext
+			- request : HttpServletRequest request
+			- session : HttpSession session
+			- application : ServletContext application
+			
 4) setProperty 액션 태그로 프로퍼티 값 저장하기
+	name : 
+	property : 
+	value : 
+	param : -> name 속성이 다른 명칭을 DTO 클래스의 특정 속성 매칭
+	
 5) getProperty 액션 태그로 프로퍼티의 값 가져오기
+	name: 
+	property:
+	param:
+
+속성을 관리하는 4가지 객체
+1) PageContext pageContext : 현재 페이지 내에서 속성값 유지
+2) HttpServletRequest request : 요청 처리 범위 내에서 속성값 유지
+3) HttpSession session : 세션이 유지되는 동안 속성값이 존재
+4) ServletContext application : 애플리케이션 실행동안 유지
+	
+	void setAttribute(String key, Object value) - 속성 추가
+		- key : 속성을 찾기위한 값, EL식의 속성(변수명)명
+		
+	Object getAttrubute(String key) - 속성조회 
+	
+	void removeAttribute(String key) - 속성 삭제
+	
+적용 범위
+pageContext < request < session < application
+	
+JSP 내장객체
+1. HttpServletRequest request
+2. HttpServletResponse response
+3. JspWriter out
+4. HttpSession session
+5. ServletContext application
+6. PageContext pageContext
+7. Object page = this
+8. ServletConfig config
+9. Throwable exception / isErrorPage = true
+
+속성 처리 객체와 메서드의 종류
+pageContext, request, session, application
+
+1. setAttribute(String name, Object value)
+2. getAttrubute(String name)
+3. removeAttribute(String name
+4. getAttributeNames()
