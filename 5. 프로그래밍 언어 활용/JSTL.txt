@@ -81,12 +81,34 @@ URI
 			- 예외가 없으면 null
 			
 8) <c:redirect>
+		- 페이지 이동
+		- url : 이동할 주소
+		- HttpServletResponse::sendRedirect(...)
+			: 응답 헤더 Location: 주소
+		
+		- <c:param>
+			- name
+			- value
+			- 쿼리스트링 추가 ?name=value...
 			
 9) <c:import>
-	
+		- 버퍼에 추가
+		- 외부 서버 자원도 가능
+		- url: 주소
+		- <c:param>으로 요청 데이터를 함께 전송
+		- var : 출력 버퍼를 변수에 담는다.
+		
 	참고)
 		<jsp:include ... />
+			- 동일 서버 자원만 가능
+			
 10) <c:url> 
+	: 컨택스트 경로가 포함된 주소
+	
+	value : 주소
+	var : 컨택스트 경로가 포함된 주소 -> 변수
+	<c:param> : 쿼리스트링 값 추가 
+	
 11) <c:out> 	
 
 3. 포매팅(fmt) 라이브러리
