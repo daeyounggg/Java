@@ -110,8 +110,11 @@ URI
 	<c:param> : 쿼리스트링 값 추가 
 	
 11) <c:out> 	
+		value : 출력할 값
+		escapeXml : false - HTML 태그를 해석
 
 3. 포매팅(fmt) 라이브러리
+	- 형식화, 지역화
 	uri="jakarta.tags.fmt" // JSTL 3.0
 	prefix="fmt"
 	
@@ -120,11 +123,65 @@ URI
 	uri="http://java.sun.com/jsp/jstl/fmt"
 	
 1) fmt:formatDate 	
+	- java.text.SimpleDateFormat -> 날짜 형식화 클래스
+		(java.util.Date)
+	- value : Date 객체
+	- type : date - 기본값 : 날짜 표기
+				time - 시간 표기
+				both - 날짜와 시간 표기
+				
+	- dateStyle - full | long | medium | short
+	- timeStyle - full | long | medium | short
+	- pattern="패턴..."
+				
 2) fmt:formatNumber
+   - java.text.DecimalFormat -> 숫자에 대한 형식화
+   - value : 값 -> 지역화 설정에 따른 형식화
+   - groupingUsed : true - 기본값(세자리 마다 콤마(,))
+                 false - 콤마 X
+
+   - type : percent - 퍼센트 표기, currency - 통화
+   - pattern 
+      0 패턴
+      # 패턴
+	
 3) fmt:setLocale
+	- 지역화 설정 변경
+	- value : 언어코드_국가코드 예) kr_ko, en_us
+				언어코드 예) en, ko
+				
 4) fmt:timeZone과 fmt:setTimeZone
+	- value : 시간대 ID - Asia/Seoul, America/New_York 
+	- fmt:timeZone : 열린태그, 닫힌 태그, 사이에 있는 시간을 변경
+	- fmt:setTimeZone : 태그 설정 이후 있는 시간 태그에 적용
+	
 5) fmt:setBundle과 fmt:bundle
+	- 메세지 파일(properties 파일 생성 - 클래스패스에 위치해야 인식)
+	- basename="메세지 파일 자원 (디렉토리명.파일명)"
+		basename="messages.commons"
+	- fmt:message
+				- key : properties 파일의 키값
+				- var : 출력 데이터를 변수에 담기
+				
+	- java.time.MessageFormat
+	
+	참고)
+	properties 파일 형식
+	# 주석 ...
+	키=값
+	키=값
+	
+	java.util.ResourceBundle
+		
+
 6) fmt:requestEncoding
 
-4. 함수(functions) 라이브러리
+4. 함수(functions) 라이브러리	
 	uri="jakarta.tags.functions"
+
+
+
+
+
+
+
