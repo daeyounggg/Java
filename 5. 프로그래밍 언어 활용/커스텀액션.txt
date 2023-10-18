@@ -39,29 +39,51 @@
 	- 속성명 : 자바 변수, EL식 속성명 
 	- type : 자료형, 기본값 java.lang.String(문자열)
 				- 기본형 자료형은 사용불가(int, long X), 기본 자료형은 wrapper 클래스 형태로 설정(int -> java.lang.Integer)
+	- required : 필수 항목
+	
 5) variable 지시자
+	- EL 속성 변수로 사용 가능하게 설정
+	- <c:set var="변수명" ... />
+	${변수명}
  
 4. 한글을 포함하는 태그 파일
 5. 애트리뷰트(속성)를 지원하는 태그 파일
 6. 태그 파일의 내장 변수
+
 7. 동적 애트리뷰트를 지원하는 태그 파일
 - dynamic-attributes 
 - map 객체로 키 - 속성명, 값 - 속성값
-- EL식
+<%@ tag dynamic-attributes="속성명" %>
+- EL식 속성
+- ${속성명.세부속성..}
+- 자료형 : 문자열로 고정 
 
 8. 커스텀 액션의 본체를 처리하는 태그 파일
+body-content
+	: scriptless, tagdependent
+	
+<jsap:doBody /> : 태그 안쪽 내용물
+
 9. 변수를 지원하는 커스텀 액션
-1) name-given
-2) variable-class
+1) name-given : EL식 속성명으로 사용한 변수명
+2) variable-class : EL식 속성명의 자료형 (기본값 - java.lang.String)
 3) scope 
-	- NESTED
-	- AT_BEGIN
-	- AT_END
+	내용물이 있는 태그(열린태그 ~ 닫힌태그)
+	- NESTED : 태그 안쪽에서 변수 접근
+	- AT_BEGIN : 태그 바로 아래쪽 
+	
+	단일 태그에서 많이 사용
+	- AT_END : 닫힌 태그(태그 바깥) 아래쪽에서 접근 가능
 	
 
 10. 커스텀 액션의 본체 안에서 변수를 사용하는 예
-1)  name-from-attribute
-2)  alias
+1)  name-from-attribute : 변수명으로 사용할 속성명 
+	
+	변수명 속성에 설정할 필수 항목
+		- rtexpvalue : 기본값 true (자바 변수, EL식 변수 가능...)
+							false로 반드시 설정 (문자, 숫자 그대로 입력만 허용)
+	
+2)  alias : 실제 값이 있는 EL식 변수명
 
 11. 커스텀 액션 태그를 이용하여 레이아웃 구성하기		
 
