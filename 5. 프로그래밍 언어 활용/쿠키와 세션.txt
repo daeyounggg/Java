@@ -61,3 +61,34 @@ HttpSession 인터페이스
 
 회원가입, 로그인 구현하기 
 TDD - 설계 + 테스트
+
+servlet-api
+servlet.jsp-api
+jstl-api
+jstl-impl
+
+lombok
+
+암호화
+1) 양방향 암호화
+	- 암호화 <--> 복호화
+	- AES256
+	- Aria ...
+	
+2) 단방향 암호화 - 해시 
+	- 복호화 X(원 데이터로 복구 X)
+	
+	- 고정값 해시 : 같은 값에 대해서 같은 해시
+		md5
+		sha1, sha256, sha516
+		
+		abc -> md5 -> c13b6afecf97ea6b38d21a8f5167fa1e
+							c13b6afecf97ea6b38d21a8f5167fa1e
+			-> sha512 -> ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f
+	
+	- 유동 해시 : 같은 값에 대해서 해시를 만들때 마다 다른 해시 -> 예측 불가능성
+		BCrypt
+			abc -> $2y$10$oPw/gMbP0leRRuQXsO/oCOhaWFXqvAKbxgObpR8OoRmhs1qmxvq/i
+				-> $2y$10$KVYyQGZ2iGYKhpxAmq8e3ewxuNo4Vft5T/sYh4PbSAXPgnzI/CZuy
+				-> $2y$10$hDqGqEF1/PEgVjsya2Y/fubU/AmbbgQE0M9sF6o85epeVKMIEdDg2
+			
