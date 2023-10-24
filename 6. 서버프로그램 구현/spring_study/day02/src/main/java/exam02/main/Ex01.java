@@ -8,7 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Ex01 {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx2.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx3.class);
 
         JoinService joinService = ctx.getBean("joinService", JoinService.class);
         InfoService infoService = ctx.getBean("infoService", InfoService.class);
