@@ -41,3 +41,6 @@ JPA(Java Persistence API - ORM 표준 설계)
 
 5.  객체 조립기
 
+의존성 자동 주입
+@Autowired
+
