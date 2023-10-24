@@ -21,17 +21,12 @@ public class AppCtx {
     }
 
     @Bean
-    public LoginValidator loginValidator() {
-        return new LoginValidator(memberDao()); // 생성자를 통한 의존 주입
-    }
-
-    @Bean
     public JoinService joinService(){
         return new JoinService(joinValidator(),memberDao());
     }
 
     @Bean
-    public LoginService loginService(){
-        return new LoginService(loginValidator(),memberDao());
+    public InfoService infoService(){
+        return new InfoService(memberDao());
     }
 }

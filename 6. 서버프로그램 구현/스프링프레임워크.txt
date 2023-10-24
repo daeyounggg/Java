@@ -31,7 +31,8 @@ JPA(Java Persistence API - ORM 표준 설계)
 		1) 모든 관리 객체가 싱글턴 객체(동일 객체)
 	
 4. 스프링 DI(Dependency Injection - 의존주입)
-
+	전략 패턴 - 생성자 or Setter
+	
 0) 의존(Dependency)
 	- 협동, 상호작용 
 	
