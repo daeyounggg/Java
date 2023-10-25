@@ -59,6 +59,8 @@
 2)  수동 등록한 빈과 충돌
 3) excludeFilters
 
+	AspectJ -> ANT 패턴(aspectjweaver 의존성)
+	
 빈 라이프 사이클과 범위
 1. 컨테이너 초기화 : 빈 객체의 생성, 의존 주입, 초기화
 
@@ -66,8 +68,13 @@
 
 3. 빈 객체의 라이프 사이클
 1) 객체 생성 -> 의존 설정 -> 초기화 -> 소멸
-2) InitializingBean
-3) DisposableBean
+2) InitializingBean 인터페이스
+	- afterPropertiesSet 메서드(추상) : 초기화 단계에서 호출
+	- 객체가 완전해진 이후(의존설정 마무리 된 후) 초기에 처리할 부분을 정의
+		
+3) DisposableBean 인터페이스
+	- destroy 메서드(추상) : 소멸 전에 호출
+	- 정리작업, 자원 해제 작업 
 
 4.  빈 객체의 초기화와 소멸 : 커스텀 메서드
 1) initMethod 
