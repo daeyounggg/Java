@@ -4,6 +4,8 @@ import exam03.models.member.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.format.DateTimeFormatter;
+
 @Configuration
 public class AppCtx2 {
     @Bean
@@ -17,8 +19,17 @@ public class AppCtx2 {
     }
 
     @Bean
-    public InfoService infoService(){
+    public InfoService infoService() {
         return new InfoService();
     }
 
+    /*
+    @Beanrvice();
+    }
+    public DateTimeFormatter dateTimeFormatter() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
+
+        return formatter;
+    }
+     */
 }
