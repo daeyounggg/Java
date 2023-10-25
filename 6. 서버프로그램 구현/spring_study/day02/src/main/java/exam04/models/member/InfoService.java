@@ -12,16 +12,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class InfoService {
 
-
     private final MemberDao memberDao;
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-MM-dd");
 
     @Autowired
     public void setFormatter(@Nullable DateTimeFormatter formatter){
-        System.out.println("유입?");
-        System.out.println(formatter);
-
         this.formatter = formatter;
     }
 

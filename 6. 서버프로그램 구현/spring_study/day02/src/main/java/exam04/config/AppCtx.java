@@ -1,10 +1,25 @@
 package exam04.config;
 
+import exam04.models.member.MemberDao;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
 @Configuration
-@ComponentScan("exam04.models")
-public class AppCtx {
+/*
+@ComponentScan(basePackages = "exam04.models",
+ excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = ManualBean.class))
+*/
+@ComponentScan(basePackages = "exam04.models",
+excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = MemberDao.class))
 
+public class AppCtx {
+    /*
+    @Bean
+    public MemberDao memberDao(){
+        System.out.println("여기?");
+        return new MemberDao();
+    }
+     */
 }
