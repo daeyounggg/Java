@@ -77,8 +77,12 @@
 	- 정리작업, 자원 해제 작업 
 
 4.  빈 객체의 초기화와 소멸 : 커스텀 메서드
-1) initMethod 
-2) destroyMethod 
+@Bean
+1) initMethod : 초기화시 호출 메서드 정의
+2) destroyMethod : 소멸시 호출 메서드 정의
 
 5. 빈 객체의 생성과 관리 범위
 @Scope 
+	- singleton : 동일 객체 
+	- prototype : 새로운 객체를 생성 
+					- 스프링 컨테이너의 관리 기능에 제약 발생 할 가능성이 있다.
