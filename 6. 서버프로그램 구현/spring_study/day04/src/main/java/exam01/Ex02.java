@@ -6,7 +6,7 @@ public class Ex02 {
         long result1 = cal1.factorial(10);
         System.out.printf("cal1=%d%n", result1);
 
-        ProxyCalculator cal2 = new ProxyCalculator(new ImplCalculator());
+        Calculator cal2 = new ProxyCalculator(new ImplCalculator());
         long result2 = cal1.factorial(10);
         System.out.printf("cal2=%d%n", result2);
 

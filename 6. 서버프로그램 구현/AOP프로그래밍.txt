@@ -29,11 +29,18 @@ aspectjweaver
 	}
 	
 2. AOP
+- spring-aop API
+- aspectjweaver
+
 1) @Aspect 
+	- 프록시로 정의하는 클래스 명
+	
 2) @Pointcut 
 	- execution 명시자
+	- 프록시가 적용될 범위
 	
 3) @Around
+	- 핵심기능과 공통기능을 수행할 메서드
 
 3. @Order
 
