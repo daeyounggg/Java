@@ -62,10 +62,13 @@ Ant 패턴
 	(*) : 1개의 매개변수를 가지고 있는 메서드
 	(*,*) : 2개의 매개변수를 가지고 있는 메서드
 		
+		
 @EnableAspectJAutoProxy
 - AspectJ 설정 자동화
 
 3. @Order
-
+	- 프록시의 실행 순서가 중요한 경우는 순서를 명시
+	- 숫자가 작을수록 먼저 수행
+	
 4. 프록시 생성방식
 5. @Around의 Pointcut 설정과 @Pointcut 재사용
