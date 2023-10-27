@@ -4,18 +4,42 @@ JDBC(Java DataBase Connectivity) API(Application Programming Interface)
 1. 순서 
 	1) java.sql.* 패키지 임포트
 	2) JDBC 드라이버 로딩
-		ojdbc8.jar
+		ojdbc10.jar
 		
 		- 동적 로딩 : Class.forName("패키지명을 포함한 클래스명");
 		
 	3) 데이터베이스 접속을 위한 Connection객체 생성
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl
+	
+		참고)
+			localhost : 같은 서버 위치
+			127.0.0.1
+	
 		DriverManager 
 			.getConnection(String url)
 			.getConnection(String url, String user, String password) 
 			.getConnection(String url, Properties prop)
 	
 	4) 쿼리문을 실행하기 위한  Statement/PreparedStatement/CallableStatement 객체 생성 쿼리 실행
+		Statement : 정적 쿼리
+		
+		ResultSet executeQuery(String sql) : 조회용 쿼리(SELECT ... )
+		
+		int executeUpdate(String sql) : 데이터 변경용 쿼리(INSERT, UPDATE, DELETE)
+												: 반환값 - 반영된 레코드 갯수
+	
 	5) 쿼리 실행 결과 값(int, ResultSet) 사용
+		ResultSet
+			boolean next() : 다음 커서(레코드)로 이동
+			
+			get자료형(...) : 데이터 조회용 메서드
+						(int ...) : 컬럼 순서 번호(1, 2, ...)
+						(String ... ) : 컬럼명
+						
+			java.sql.Date.getDate(...) : 날짜
+			java.sql.Time.getTime(...) : 시간
+			java.sql.Timestamp getTimestamp(...) : 날짜와 시간
+			
 	6) 사용된 객체(ResultSet, Statement/PreparedStatement/CallableStatement, Connection) 종료
 	
 데이터베이스 쿼리 실행
