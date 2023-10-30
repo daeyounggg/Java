@@ -10,9 +10,9 @@ public class Ex04 {
 
         JdbcTemplate jdbcTemplate = ctx.getBean(JdbcTemplate.class);
         String sql = "INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, USER_NM, EMAIL) " +
-                "VALUES (SEQ_MEMBER.nextval, ?, ?, ?, ?)";
+                " VALUES (SEQ_MEMBER.nextval, ?, ?, ?, ?)";
 
-        int affectedRows = jdbcTemplate.update(sql, "user01","123456", "사용자01", "user01@test.org");
+        int affectedRows = jdbcTemplate.update(sql, "user01", "123456", "사용자01", "user01@test.org");
 
         System.out.println(affectedRows);
 
