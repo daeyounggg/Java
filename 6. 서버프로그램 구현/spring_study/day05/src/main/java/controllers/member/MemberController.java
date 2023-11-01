@@ -9,24 +9,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
 @Controller
 public class MemberController {
-    /*
-    @Autowired
-    private HttpServletRequest request;
 
-    @GetMapping("/member/login")
-    public String login(RequestLogin form, HttpServletResponse response){
-        System.out.println(form);
-        System.out.println(response);
-        System.out.println(request.getParameter("userId"));
+    @GetMapping("/member/join")
+    public String join(Model model){
+        String[] addCss = {"member/test1", "member/test2"};
+        List<String> addScript = Arrays.asList("member/script1", "member/script2");
 
-        return "member/login";
+        model.addAttribute("addCss",addCss);
+        model.addAttribute("addScript",addScript);
+        model.addAttribute("pageTitle","회원가입");
+
+        return "member/join";
     }
-     */
 
     @GetMapping("/member/login")
     public String login(Model model){
