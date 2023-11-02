@@ -1,0 +1,101 @@
+스프링 MVC 
+1. 메시지
+1) MessageSource
+2) ResourceBundleMessageSource
+3) 다국어 지원 위한 메시지 파일
+
+2. 커맨드 객체 검증
+1) Validator 인터페이스
+2) Errors
+3) ValidationUtils
+
+
+3. 에러 코드에 해당하는 메시지 코드를 찾는 규칙
+- 에러코드 + "." + 커맨드객체이름 + "." + 필드명
+- 에러코드 + "." + 필드명
+- 에러코드 + "." + 필드타입
+- 에러코드
+
+4. 프로퍼티 타입이 List나 목록인 경우 다음 순서를 사용해서 메시지 코드를 생성한다.
+
+에러코드 + "." + 커맨드객체이름 + "." + 필드명[인덱스].중첩필드명
+에러코드 + "." + 커맨드객체이름 + "." + 필드명.중첩필드명
+에러코드 + "." + 필드명[인덱스].중첩필드명
+에러코드 + "." + 필드명.중첩필드명
+에러코드 + "." + 중첩필드명
+에러코드 + "." + 필드타입
+에러코드
+
+5. 글로벌 범위 Validator와 컨트롤러 범위 Validator
+1) 글로벌 범위 Validator 설정과 @Valid 애노테이션
+-  WebMvcConfigurer의 getValidalor() 
+2) @InitBinder 애노테이션을 이용한 컨트롤러 범위 Validator
+@InitBinder
+protected void InitBinder(WebDataBinder binder) {
+	binder.setValidator(new RegisterRequestValidator());
+}
+	
+3) 컨트롤러 범위 Validator  > 글로벌 범위 Validator
+
+6. Bean Validation
+1) 설정
+2) Bean Validation의 주요 애노테이션 
+@AssertTrue
+@AssertFalse
+@DecimalMax
+@DecimalMin
+@Max
+@Min
+@Digits
+@Size
+@Null
+@NonNull
+@Pattern
+
+@NotEmpty
+@NotBlank
+@Positive
+@PositiveOrZero
+@Email
+@Future
+@FutureOrPresent
+@Past
+@PastOrPresent
+
+1. 세션
+2.인터셉터
+1) HandlerInterceptor 인터페이스 
+- boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception;
+- void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception;
+- void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception;
+2) WebMvcConfigurer 인터페이스 : addInterceptors(InterceptorRegistry registry)
+3) Ant 경로 패턴
+- * : 0개 또는 그 이상의 글자
+- ** 0개 또는 그 이상의 폴더 경로
+- ? : 1개 글자
+
+3.쿠키
+
+1. 날짜 값 변환
+@DateTimeFormat 
+- LocalDate, LocalTime, LocalDateTime ..
+- 형식이 일치 하지 않으면 예외 발생 
+	- 메세지 코드 typeMismatch
+	
+2. @PathVariable : 경로 변수 
+
+3. 컨트롤러 익셉션 처리하기
+1) @ExceptionHandler
+	- 발생 예외를 정의 
+	- 예외발생시 특정 페이지를 노출 
+	- 메서드에 자동 주입 
+		- 발생한 예외 객체
+		- Model 
+		- HttpServletRequest
+		- HttpServletResponse 
+		- HttpSession 
+
+2) @ControllerAdvice
+
+미리캔버스
+캔바
