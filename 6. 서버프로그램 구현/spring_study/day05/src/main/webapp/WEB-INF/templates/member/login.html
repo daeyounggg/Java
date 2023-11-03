@@ -4,6 +4,7 @@
     layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
         <form method="post" th:action="@{/member/login}" th:object="${requestLogin}">
+            <div th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
             <dl>
                 <dt th:text="#{아이디}">아이디</dt>
                 <dd>

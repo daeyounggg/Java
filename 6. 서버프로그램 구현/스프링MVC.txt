@@ -88,6 +88,18 @@ ModelMapper 의존성
 
 중첩 커맨드 객체 / 커맨드 객체 안에 커맨드 객체
 
+#fields.globalErrors() : -> errors.reject(...)
+
+#fields.errors('global')
+
+요청 메서드의 매개변수로 자동 주입
+1. 커맨드 객체
+2. Errors
+3. Model
+4. HttpServletRequest
+5. HttpServletResponse
+6. HttpSession
+
 1. 세션
 2.인터셉터
 1) HandlerInterceptor 인터페이스 

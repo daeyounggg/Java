@@ -35,14 +35,14 @@ public class LoginValidator implements Validator {
         if(userId != null && !userId.isBlank()){
             member = memberDao.get(userId);
             if(member == null) {
-                errors.rejectValue("userId", "NotFound");
+                errors.reject("NotFound.userId");
             }
         }
 
         if(member != null && userPw != null && !userPw.isBlank()){
             boolean matched = BCrypt.checkpw(userPw, member.getUserPw());
             if(!matched){
-                errors.rejectValue("userPw","Incorrect");
+                errors.reject("Incorrect.userPw");
             }
         }
     }

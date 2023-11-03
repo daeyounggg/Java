@@ -3,7 +3,6 @@ package controllers.member;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import models.member.JoinService;
-import models.member.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,7 @@ public class MemberController {
 
     private final JoinValidator joinValidator;
     private final JoinService joinService;
-    private final LoginService loginService;
+    private final LoginValidator loginValidator;
 
     @GetMapping("/join") // /member/join
     public String join(@ModelAttribute RequestJoin join) {
@@ -50,6 +49,7 @@ public class MemberController {
 
     @PostMapping("/login")
     public String loginPs(@Valid RequestLogin form, Errors errors) {
+        loginValidator.validate(form, errors);
 
         if(errors.hasErrors()) {
             return "member/login";
