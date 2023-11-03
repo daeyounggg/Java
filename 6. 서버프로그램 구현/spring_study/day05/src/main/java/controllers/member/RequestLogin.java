@@ -7,5 +7,6 @@ public record RequestLogin(
         String userId,
         @NotBlank
         String userPw,
-        boolean saveId
+
+        Boolean saveId
 ) {}
