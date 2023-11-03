@@ -82,6 +82,12 @@ hibernate Validator
 @Past
 @PastOrPresent
 
+참고)
+ModelMapper 의존성
+- 동일한 getter, setter 메서드 명 -> 다른 객체로 변환
+
+중첩 커맨드 객체 / 커맨드 객체 안에 커맨드 객체
+
 1. 세션
 2.인터셉터
 1) HandlerInterceptor 인터페이스 

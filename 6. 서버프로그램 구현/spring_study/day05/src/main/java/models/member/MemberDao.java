@@ -2,16 +2,11 @@ package models.member;
 
 import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,26 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberDao {
 
-
     private final JdbcTemplate jdbcTemplate;
-
-    /*
     public boolean register(Member member) {
-
-        String userPw = BCrypt.hashpw(member.getUserPw(), BCrypt.gensalt(12));
-        member.setUserPw(userPw);
-        String sql = "INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, EMAIL, USER_NM, MOBILE) " +
-                " VALUES (SEQ_MEMBER.nextval, ?, ?, ?, ?, ?)";
-
-
-        int affectedRows = jdbcTemplate.update(sql, member.getUserId(), userPw, member.getEmail(), member.getUserNm(),
-                member.getMobile());
-
-        return affectedRows > 0;
-    }
-     */
-    // @Transactional
-    public boolean register(Member member){
         String userPw = BCrypt.hashpw(member.getUserPw(), BCrypt.gensalt(12));
         String sql = "INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, EMAIL, USER_NM, MOBILE) " +
                 " VALUES (SEQ_MEMBER.nextval, ?, ?, ?, ?, ?)";
@@ -48,18 +25,17 @@ public class MemberDao {
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         int affectedRows = jdbcTemplate.update(con -> {
-                PreparedStatement pstmt = con.prepareStatement(sql, new String[] {"USER_NO"});
-                pstmt.setString(1, member.getUserId());
-                pstmt.setString(2, userPw);
-                pstmt.setString(3, member.getEmail());
-                pstmt.setString(4, member.getUserNm());
-                pstmt.setString(5, member.getMobile());
+            PreparedStatement pstmt = con.prepareStatement(sql, new String[] {"USER_NO"});
+            pstmt.setString(1, member.getUserId());
+            pstmt.setString(2, userPw);
+            pstmt.setString(3, member.getEmail());
+            pstmt.setString(4, member.getUserNm());
+            pstmt.setString(5, member.getMobile());
 
-                return pstmt;
-
+            return pstmt;
         }, keyHolder);
 
-        if(affectedRows > 0) {
+        if (affectedRows > 0) {
             long userNo = keyHolder.getKey().longValue();
             member.setUserNo(userNo);
         }
@@ -74,7 +50,7 @@ public class MemberDao {
             Member member = jdbcTemplate.queryForObject(sql, this::mapper, userId);
 
             return member;
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             e.printStackTrace();
             return null;
         }
@@ -87,7 +63,7 @@ public class MemberDao {
         return cnt > 0;
     }
 
-    public List<Member> gets(){
+    public List<Member> gets() {
         String sql = "SELECT * FROM MEMBER ORDER BY REG_DT DESC";
 
         List<Member> members = jdbcTemplate.query(sql, this::mapper);
@@ -106,5 +82,4 @@ public class MemberDao {
                 .regDt(rs.getTimestamp("REG_DT").toLocalDateTime())
                 .build();
     }
-
 }

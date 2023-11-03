@@ -30,4 +30,7 @@ public class RequestJoin {
 
    @AssertTrue
    private boolean agree;
+
+   private Address addr; // addr.address, addr.zipcode
+
 }
