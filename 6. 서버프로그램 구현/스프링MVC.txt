@@ -114,6 +114,8 @@ ModelMapper 의존성
 
 3.쿠키
 
+@CookieValue  쿠키명과 동일한 변수명
+
 1. 날짜 값 변환
 @DateTimeFormat 
 - LocalDate, LocalTime, LocalDateTime ..
