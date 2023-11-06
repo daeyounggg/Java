@@ -23,7 +23,7 @@ public class MvcConfig implements WebMvcConfigurer {
     @Autowired
     private ApplicationContext ctx;
 
-/*
+    /*
     @Autowired
     private JoinValidator joinValidator;
 
@@ -32,13 +32,38 @@ public class MvcConfig implements WebMvcConfigurer {
         return joinValidator;
     }
 
- */
+    */
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+       registry.addInterceptor(memberOnlyInterceptor())
+               .addPathPatterns("/mypage/**");
+
+       registry.addInterceptor(commonInterceptor())
+               .addPathPatterns(("/**"));
+    }
+
+    @Bean
+    public CommonInterceptor commonInterceptor(){
+        return new CommonInterceptor();
+    }
+
+    @Bean
+    public MemberOnlyInterceptor memberOnlyInterceptor(){
+        return new MemberOnlyInterceptor();
+    }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/")
                 .setViewName("main/index");
+
+        registry.addViewController("/mypage/**")
+                .setViewName("member/mypage");
+
     }
+
+
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {

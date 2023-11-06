@@ -4,16 +4,16 @@ import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Builder;
+import lombok.Data;
 
-@Builder
+@Data
 public class RequestJoin {
    @NotBlank
    @Size(min=6)
    private String userId;
 
    @NotBlank
-   @Size(min=8,max=16)
+   @Size(min=8, max=16)
    private String userPw;
 
    @NotBlank
@@ -25,12 +25,10 @@ public class RequestJoin {
    @Email
    @NotBlank
    private String email;
-
    private String mobile;
 
    @AssertTrue
    private boolean agree;
 
    private Address addr; // addr.address, addr.zipcode
-
 }
