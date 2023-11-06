@@ -8,6 +8,7 @@
 
 	기본 양식 content-type 
 		application/x-www-form-urlencoded
+		
 2. web.xml 설정 
 <multipart-config>
 	<max-file-size>20971520</max-file-size> <!--  1MB * 20 -->
