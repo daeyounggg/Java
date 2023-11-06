@@ -8,17 +8,19 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class JoinService {
+
     private final JoinValidator validator;
     private final MemberDao memberDao;
 
-    public void join(RequestJoin form) {
-        validator.check(form);
 
-        Member member2 = new Member();
+    public void join(RequestJoin form) {
+
+        validator.check(form);
 
         Member member = new ModelMapper().map(form, Member.class);
 
         memberDao.register(member);
     }
+
 
 }

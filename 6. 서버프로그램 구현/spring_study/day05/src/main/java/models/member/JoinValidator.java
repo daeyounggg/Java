@@ -14,6 +14,7 @@ public class JoinValidator implements Validator<RequestJoin>, RequiredValidator,
 
     private final MemberDao memberDao;
 
+
     @Override
     public void check(RequestJoin member) {
         String userId = member.getUserId();
@@ -37,7 +38,7 @@ public class JoinValidator implements Validator<RequestJoin>, RequiredValidator,
 
         // 비밀번호, 비밀번호 확인 일치여부 체크
         requiredTrue(userPw.equals(confirmUserPw), new BadRequestException("비밀번호가 일치하지 않습니다."));
-        
+
         // 중복 가입 여부 체크
         requiredTrue(!memberDao.exists(userId), new DuplicateMemberException());
 

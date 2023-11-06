@@ -17,15 +17,16 @@ public class LoginService {
     private final HttpSession session;
     private final HttpServletResponse response;
 
-    public void login(RequestLogin form){
-        String userId = form.userId();
+
+    public void login(RequestLogin form) {
+        String userId = form.getUserId();
         Member member = memberDao.get(userId);
 
         session.setAttribute("member", member);
 
         Cookie cookie = new Cookie("saveId", userId);
-        boolean saveId = Objects.requireNonNullElse(form.saveId(),false);
-        if(saveId){ // 쿠키 저장
+        boolean saveId = Objects.requireNonNullElse(form.isSaveId(), false);
+        if (saveId) { // 쿠키 저장
             cookie.setMaxAge(60 * 60 * 24 * 365);
         } else { // 쿠키 삭제
             cookie.setMaxAge(0);

@@ -43,9 +43,11 @@ public class MemberController {
 
     @GetMapping("/login")  // /member/login
     public String login(@ModelAttribute RequestLogin form, @CookieValue(name="saveId", required = false) String userId) {
-       if(userId != null){
+        if (userId != null) {
+            form.setUserId(userId);
+            form.setSaveId(true);
+        }
 
-       }
         return "member/login";
     }
 
@@ -53,7 +55,7 @@ public class MemberController {
     public String loginPs(@Valid RequestLogin form, Errors errors) {
         loginValidator.validate(form, errors);
 
-        if(errors.hasErrors()) {
+        if (errors.hasErrors()) {
             return "member/login";
         }
 
@@ -61,10 +63,11 @@ public class MemberController {
         loginService.login(form);
 
         return "redirect:/";
+
     }
 
     @RequestMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         session.invalidate();
 
         return "redirect:/member/login";

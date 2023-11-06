@@ -24,24 +24,24 @@ public class LoginValidator implements Validator {
         RequestLogin form = (RequestLogin) target;
 
         /**
-         * 1. 아이디가 존재하는지 체크
+         * 1. 아이디가 존재 하는지 체크
          * 2. 회원을 조회 -> 비밀번호 검증
          */
 
-        String userId = form.userId();
-        String userPw = form.userPw();
+        String userId = form.getUserId();
+        String userPw = form.getUserPw();
 
         Member member = null;
-        if(userId != null && !userId.isBlank()){
+        if (userId != null && !userId.isBlank()) {
             member = memberDao.get(userId);
-            if(member == null) {
+            if (member == null) {
                 errors.reject("NotFound.userId");
             }
         }
 
-        if(member != null && userPw != null && !userPw.isBlank()){
+        if (member != null && userPw != null && !userPw.isBlank()) {
             boolean matched = BCrypt.checkpw(userPw, member.getUserPw());
-            if(!matched){
+            if (!matched) {
                 errors.reject("Incorrect.userPw");
             }
         }

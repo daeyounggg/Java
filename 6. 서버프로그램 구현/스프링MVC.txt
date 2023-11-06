@@ -104,8 +104,20 @@ ModelMapper 의존성
 2.인터셉터
 1) HandlerInterceptor 인터페이스 
 - boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception;
+	: 컨트롤러 빈 실행 전 호출
+	: 컨트롤러 빈 실행 전 공통적인 처리
+	
 - void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception;
+	: 컨트롤러 빈 실행 후 , 응답 전 호출
+	: 컨트롤러 빈 실행 후, 공통적인 처리
+	: true -> 컨트롤러 빈을 호출 실행
+	: false -> ㅌ
+	: + 인가(페이지 접근 제한)
+	
 - void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception;
+	: 응답 완료 후 호출
+	: 응답 완료 후 공통적인 정리 작업
+	
 2) WebMvcConfigurer 인터페이스 : addInterceptors(InterceptorRegistry registry)
 3) Ant 경로 패턴
 - * : 0개 또는 그 이상의 글자
