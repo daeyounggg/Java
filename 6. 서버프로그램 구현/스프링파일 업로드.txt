@@ -40,3 +40,7 @@ public static PropertySourcesPlaceholderConfigurer properties() {
 }
 
 2. @Value("${프로퍼티 키값}")
+
+java.nio.File
+
+new Input and Output
