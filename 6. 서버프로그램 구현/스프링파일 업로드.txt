@@ -23,7 +23,12 @@
 프로필
 1. @Profile
 
-2. spring.profiles.active
+2. spring.profiles.active : Profile 환경 변수
+
+java -D환경변수명=값
+
+java -Dspring.profiles.active=prod -> @Profile('prod')
+
 1) web.xml 
 2) 배포 파일 실행시 
 java -jar -Dspring.profiles.active=프로필이름 

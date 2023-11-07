@@ -3,12 +3,15 @@ package config;
 import commons.Utils;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.spring6.SpringTemplateEngine;
@@ -19,37 +22,40 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 @EnableWebMvc
 @Import(DbConfig.class)
 public class MvcConfig implements WebMvcConfigurer {
+    @Value("${enviroment}")
+    private String env;
+
+    @Value("${file.upload.path}")
+    private String fileUploadPath;
 
     @Autowired
     private ApplicationContext ctx;
 
+    //@Autowired
+    //private JoinValidator joinValidator;
     /*
-    @Autowired
-    private JoinValidator joinValidator;
-
     @Override
     public Validator getValidator() {
         return joinValidator;
     }
-
     */
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-       registry.addInterceptor(memberOnlyInterceptor())
-               .addPathPatterns("/mypage/**");
+        registry.addInterceptor(memberOnlyInterceptor())
+                .addPathPatterns("/mypage/**");
 
-       registry.addInterceptor(commonInterceptor())
-               .addPathPatterns(("/**"));
+        registry.addInterceptor(commonInterceptor())
+                .addPathPatterns(("/**"));
     }
 
     @Bean
-    public CommonInterceptor commonInterceptor(){
+    public CommonInterceptor commonInterceptor() {
         return new CommonInterceptor();
     }
 
     @Bean
-    public MemberOnlyInterceptor memberOnlyInterceptor(){
+    public MemberOnlyInterceptor memberOnlyInterceptor() {
         return new MemberOnlyInterceptor();
     }
 
@@ -60,13 +66,11 @@ public class MvcConfig implements WebMvcConfigurer {
 
         registry.addViewController("/mypage/**")
                 .setViewName("member/mypage");
-
     }
-
-
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+
         configurer.enable();
     }
 
@@ -74,15 +78,21 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
+
+        registry.addResourceHandler("/uploads/**")
+                .addResourceLocations("file:///" + fileUploadPath);
     }
 
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
+
+        boolean cacheable = env.equals("prod") ? true : false;
+
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(ctx);
         templateResolver.setPrefix("/WEB-INF/templates/");
         templateResolver.setSuffix(".html");
-        templateResolver.setCacheable(false);
+        templateResolver.setCacheable(cacheable);
         return templateResolver;
     }
 
@@ -121,7 +131,16 @@ public class MvcConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public Utils utils(){
+    public Utils utils() {
         return new Utils();
+    }
+
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer properties() {
+        PropertySourcesPlaceholderConfigurer conf = new PropertySourcesPlaceholderConfigurer();
+        conf.setLocations(new ClassPathResource("application.properties"));
+
+        return conf;
     }
 }
