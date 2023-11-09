@@ -1,15 +1,19 @@
 package org.koreait.restcontrollers;
 
 import jakarta.validation.Valid;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.koreait.commons.BadRequestException;
+import org.koreait.commons.JSONData;
 import org.koreait.entities.Member;
 import org.koreait.repositories.MemberRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -19,17 +23,23 @@ public class ApiMemberController {
 
     private final MemberRepository repository;
 
-
     @GetMapping("/{userId}")
-    public Member info(@PathVariable String userId) {
+    public ResponseEntity<JSONData<Member>> info(@PathVariable String userId) {
         Member member = repository.findByUserId(userId);
 
-        return member;
+        JSONData<Member> data = new JSONData<>(member);
+
+        boolean isError = true;
+        if (isError) {
+            throw new BadRequestException("에러발생!!!");
+        }
+
+        return ResponseEntity.status(data.getStatus()).body(data);
     }
 
     @GetMapping("/list")
     public List<Member> list() {
-        List<Member> members = (List<Member>)repository.findAll();
+        List<Member> members = (List<Member>) repository.findAll();
 
         return members;
     }
@@ -41,16 +51,41 @@ public class ApiMemberController {
 
     @GetMapping("/test")
     public void test() {
-        log.info("테스트........");
+        log.info("테스트.....");
     }
 
     @PostMapping("/login")
-    public void login(@RequestBody @Valid RequestLogin form, Errors errors){
+    public ResponseEntity<Object> login(@RequestBody @Valid RequestLogin form, Errors errors) {
 
-        if (errors.hasErrors()){
-            errors.getAllErrors().stream().map(o -> o.getDefaultMessage()).forEach(System.out::println);
+        if (errors.hasErrors()) {
+            String message = errors.getAllErrors().stream()
+                    .map(o -> o.getDefaultMessage())
+                    .collect(Collectors.joining(","));
+
+            throw new RuntimeException(message);
         }
 
         log.info(form.toString());
+        /*
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .header("TestHeader","Test")
+                .build();
+
+         */
+        return ResponseEntity.ok().build();
+    }
+
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<JSONData<Object>> errorHandler(Exception e) {
+
+        JSONData<Object> data = new JSONData<>();
+        data.setSuccess(false);
+        data.setStatus(HttpStatus.BAD_REQUEST);
+        data.setMessage(e.getMessage());
+
+
+        return ResponseEntity.status(data.getStatus()).body(data);
     }
 }
